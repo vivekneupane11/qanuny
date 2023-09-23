@@ -1,11 +1,13 @@
-import { Mulish_500Medium, useFonts } from '@expo-google-fonts/mulish';
+import { Mulish_300Light, Mulish_500Medium, useFonts } from '@expo-google-fonts/mulish';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './components/Header';
 import { THEME } from './constants/Theme';
 
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
     Mulish_500Medium,
+    Mulish_300Light
   });
 
   if (!fontsLoaded && !fontError) {
@@ -14,7 +16,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: 'Mulish_500Medium', fontSize: 14,color:THEME.COLORS.primaryTextColor }}>mulish</Text>
+      <Text style={{ fontFamily: 'Mulish_500Medium', fontSize: 40,color:THEME.COLORS.primaryTextColor }}>mulish</Text>
+      <Header/>
     </View>
   );
 }

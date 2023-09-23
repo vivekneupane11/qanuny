@@ -4,6 +4,6 @@ import { THEME } from '../../constants/Theme'
 
 export default function Header() {
   return (
-    <Text style={{ fontFamily: 'Mulish_500Medium', fontSize: 40,color:THEME.COLORS.primaryTextColor }}>mulish</Text>
+    <Text style={{ fontFamily: 'Mulish_400Regular', fontSize: 40,color:THEME.COLORS.primaryTextColor }}>mulish</Text>
   )
 }

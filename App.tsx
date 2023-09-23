@@ -1,4 +1,4 @@
-import { Mulish_300Light, Mulish_500Medium, useFonts } from '@expo-google-fonts/mulish';
+import { Mulish_300Light, Mulish_400Regular, Mulish_500Medium, useFonts } from '@expo-google-fonts/mulish';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
@@ -7,7 +7,8 @@ import { THEME } from './constants/Theme';
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
     Mulish_500Medium,
-    Mulish_300Light
+    Mulish_300Light,
+    Mulish_400Regular
   });
 
   if (!fontsLoaded && !fontError) {

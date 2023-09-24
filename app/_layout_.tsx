@@ -17,22 +17,13 @@ const StackLayout = () => {
       }}
     >
       <Stack.Screen
-        name="index"
-        options={{ headerTitle: "Login", headerShown: false }}
-      />
-      <Stack.Screen
-        name="register"
+        name="modal"
         options={{
+          presentation: "modal",
           headerTitle: "Create account",
-          headerRight: () => (
-            <Button title="Open" onPress={() => router.push("/modal")} />
+          headerLeft: () => (
+            <Button title="Close" onPress={() => router.back()} />
           ),
-        }}
-      />
-      <Stack.Screen
-        name="(tabs)"
-        options={{
-          headerShown: false,
         }}
       />
     </Stack>

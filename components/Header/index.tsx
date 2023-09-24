@@ -1,9 +1,41 @@
-import React from 'react'
-import { Text } from 'react-native'
-import { THEME } from '../../constants/Theme'
+import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "expo-router";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "../../utils/Responsive";
 
-export default function Header() {
+const CustomHeader = ({ title }: { title: string }) => {
+  const navigation = useNavigation();
+
   return (
-    <Text style={{ fontFamily: 'Mulish_400Regular', fontSize: 40,color:THEME.COLORS.primaryTextColor }}>mulish</Text>
-  )
-}
+    <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <MaterialIcons name="keyboard-arrow-left" size={28} color="black" />
+      </TouchableOpacity>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+};
+
+export default CustomHeader;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    paddingTop: heightPercentageToDP(8),
+    paddingHorizontal: widthPercentageToDP(5),
+    width: "100%",
+  },
+  title: {
+    fontSize: fontSizeToDp(4),
+    fontFamily: "Mulish_700Bold",
+    width: "80%",
+    textAlign: "center",
+  },
+});

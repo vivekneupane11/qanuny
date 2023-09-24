@@ -3,7 +3,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import { THEME } from './constants/Theme';
+  {/* <Pressable onPress={handleLogin}>
+        <Text>Login</Text>
+      </Pressable>
 
+      <Link href="/register" asChild>
+        <Pressable>
+          <Text>Create account</Text>
+        </Pressable>
+      </Link>
+
+      <Link href="/test">Unmatched route</Link> */}
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
     Mulish_500Medium,

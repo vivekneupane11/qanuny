@@ -4,7 +4,9 @@ export const THEME ={
         primaryTextColor:'#111515',
         secondaryDarkTextColor:"#666666",
         secondaryLightTextColor:"#A3A3A3",
-
+        border:' #F0F0F0',
+        iconColor:'#A3A3A3',
+        
     },
     IMAGES:{
         ARROW:require('../../assets/Onboard/arrow.png'),

@@ -1,4 +1,12 @@
-import { Mulish_300Light, Mulish_400Regular, Mulish_500Medium, Mulish_600SemiBold, Mulish_700Bold, Mulish_900Black, useFonts } from '@expo-google-fonts/mulish';
+import {
+  Mulish_300Light,
+  Mulish_400Regular,
+  Mulish_500Medium,
+  Mulish_600SemiBold,
+  Mulish_700Bold,
+  Mulish_900Black,
+  useFonts,
+} from "@expo-google-fonts/mulish";
 import { Stack, useRouter } from "expo-router";
 import { Button } from "react-native";
 const StackLayout = () => {
@@ -9,13 +17,12 @@ const StackLayout = () => {
     Mulish_400Regular,
     Mulish_600SemiBold,
     Mulish_700Bold,
-    Mulish_900Black
+    Mulish_900Black,
   });
 
   if (!fontsLoaded && !fontError) {
     return null;
   }
-
 
   return (
     <Stack
@@ -34,9 +41,17 @@ const StackLayout = () => {
         options={{ headerTitle: "Login", headerShown: false }}
       />
       <Stack.Screen
+        name="forgetpassword"
+        options={{ headerTitle: "Password Recovery", headerShown: false }}
+      />
+        <Stack.Screen
         name="register"
+        options={{ headerTitle: "Register", headerShown: false }}
+      />
+      <Stack.Screen
+        name="otp"
         options={{
-          headerTitle: "Create account",
+          headerTitle: "OTP account",
           headerRight: () => (
             <Button title="Open" onPress={() => router.push("/modal")} />
           ),

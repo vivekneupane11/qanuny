@@ -10,12 +10,12 @@ import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
 import { THEME } from "../constants/Theme";
 import {
-  fontSizeToDp,
-  heightPercentageToDP,
-  widthPercentageToDP,
+    fontSizeToDp,
+    heightPercentageToDP,
+    widthPercentageToDP,
 } from "../utils/Responsive";
 
-const LoginPage = () => {
+const PasswordRecovery = () => {
   const [isChecked, setChecked] = useState(false);
 
   const router = useRouter();
@@ -27,15 +27,15 @@ const LoginPage = () => {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="Sign In" />
+      <CustomHeader title="Mot de passe oublié" />
       <View style={styles.content}>
         <View style={styles.greetings}>
-          <Text style={styles.boldText}>Hello,</Text>
-          <Text style={styles.lightText}>Welcome Back!</Text>
-          <Image
-            style={styles.arrow}
-            source={require("../assets/Onboard/arrow.png")}
+        <Image
+            style={styles.images}
+            source={require("../assets/Onboard/recovery-password.png")}
           />
+          <Text style={styles.lightText}>Please Enter Your Email Address To Receive a Verification Code</Text>
+          
         </View>
         <View style={styles.formGroup}>
           <TextInputWithIcon
@@ -83,7 +83,7 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default PasswordRecovery;
 
 const styles = StyleSheet.create({
   container: {
@@ -99,24 +99,21 @@ const styles = StyleSheet.create({
     paddingTop: heightPercentageToDP(2),
   },
   greetings: {
-    position: "relative",
     width: widthPercentageToDP(90),
+    justifyContent:'center',
+    alignItems:'center'
   },
-  boldText: {
-    fontFamily: "Mulish_900Black",
-    fontSize: fontSizeToDp(7),
-    color: THEME.COLORS.primaryTextColor,
-  },
+
   lightText: {
     fontFamily: "Mulish_400Regular",
-    fontSize: fontSizeToDp(3.7),
+    fontSize: fontSizeToDp(3.3),
     marginTop: 3,
     color: THEME.COLORS.primaryTextColor,
+    width:widthPercentageToDP(75),
+    textAlign:'center'
   },
-  arrow: {
-    position: "absolute",
-    right: 0,
-    top: heightPercentageToDP(3),
+  images: {
+  
   },
   group: {
     flexDirection: "row",

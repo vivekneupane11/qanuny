@@ -1,36 +1,61 @@
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import { AntDesign, Entypo, Feather, FontAwesome5, Ionicons } from "@expo/vector-icons";
 
+import { Tabs } from "expo-router";
 export default () => {
   return (
     <Tabs>
       <Tabs.Screen
         name="home"
         options={{
-          tabBarLabel: "List",
+          tabBarLabelStyle: { display: "none" },
           headerTitle: "Home Screen",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="list" size={size} color={color} />
+          headerShown: false,
+          tabBarIcon: ({ color, size ,focused}) => (
+           focused?<Entypo name="home" size={24} color="black" />: <Ionicons name="md-home-outline" size={24} color="black" />
+          ),
+        }}
+      />
+         <Tabs.Screen
+        name="message"
+        options={{
+          tabBarLabelStyle: { display: "none" },
+
+          headerShown: false,
+          tabBarIcon: ({ color, size ,focused}) => (
+focused?<Entypo name="message" size={24} color="black" />
+:<Feather name="message-square" size={24} color="black" />         ),
+        }}
+      />
+      <Tabs.Screen
+        name="list"
+        options={{
+          tabBarLabelStyle: { display: "none" },
+
+          headerShown: false,
+          tabBarIcon: ({ color, size ,focused}) => (
+         focused?<FontAwesome5 name="book" size={24} color="black" />:  <Feather name="book" size={24} color="black" />
+          ),
+        }}
+      />
+   
+      <Tabs.Screen
+        name="feed"
+        options={{
+          tabBarLabelStyle: { display: "none" },
+          headerShown: false,
+          tabBarIcon: ({ color, size,focused }) => (
+         focused ? <Entypo name="newsletter" size={24} color="black" />:  <Entypo name="news" size={24} color="black" />  
           ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarLabel: "Account",
+          tabBarLabelStyle: { display: "none" },
+
           headerTitle: "My Account",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="user" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="list"
-        options={{
-          tabBarLabel: "News",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="newspaper" size={size} color={color} />
+          tabBarIcon: ({ color, size,focused }) => (
+           focused?<FontAwesome5 name="user-alt" size={24} color="black" />:<AntDesign name="user" size={24} color="black" /> 
           ),
         }}
       />

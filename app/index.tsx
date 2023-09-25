@@ -64,9 +64,9 @@ const LoginPage = () => {
             <Text style={styles.rememberText}>Remember</Text>
           </View>
           <View style={styles.right}>
-           <Link href={'/forgetpassword'} asChild>
-           <Text style={styles.forgotText}>Forgot Password?</Text>
-           </Link>
+            <Link href={"/forgetpassword"} asChild>
+              <Text style={styles.forgotText}>Forgot Password?</Text>
+            </Link>
           </View>
         </View>
         <Button title="Sign In" onPress={() => {}} />
@@ -74,8 +74,8 @@ const LoginPage = () => {
 
         <View style={styles.groupBottom}>
           <Text style={styles.textLeft}>Don't have an account?</Text>
-          <Link href={'/register'} asChild>
-          <Text style={styles.textRight}>Sign up</Text>
+          <Link href={"/register"} asChild>
+            <Text style={styles.textRight}>Sign up</Text>
           </Link>
         </View>
       </View>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: widthPercentageToDP(5),
-    paddingTop: heightPercentageToDP(5),
+    paddingTop: heightPercentageToDP(3),
   },
   formGroup: {
     paddingTop: heightPercentageToDP(2),
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   groupBottom: {
     marginTop: heightPercentageToDP(3),
     flexDirection: "row",
-    justifyContent:'center'
+    justifyContent: "center",
   },
   textLeft: {
     fontFamily: "Mulish_400Regular",
@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
   textRight: {
     fontFamily: "Mulish_700Bold",
     fontSize: fontSizeToDp(3.3),
-    paddingLeft:6
-
+    paddingLeft: 6,
   },
 });

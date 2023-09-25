@@ -27,54 +27,54 @@ const RegisterPage = () => {
   return (
     <View style={styles.container}>
       <CustomHeader title="Create Account" />
-    <ScrollView contentContainerStyle={{flexGrow:1}}>
-    <View style={styles.content}>
-        <View style={styles.greetings}>
-          <Text style={styles.boldText}>Welcome,</Text>
-          <Text style={styles.lightText}>Create new account!</Text>
-          <Image
-            style={styles.arrow}
-            source={require("../assets/Onboard/arrow.png")}
-          />
-        </View>
-        <View style={styles.formGroup}>
-        <TextInputWithIcon
-            label="Full Name"
-            placeholder="Enter your full name"
-            iconName="email"
-            secureEntry={false}
-          />
-          <TextInputWithIcon
-            label="Email"
-            placeholder="Enter your email"
-            iconName="email"
-            secureEntry={false}
-          />
-   <TextInputWithIcon
-            label="Phone"
-            placeholder="(000) 000-0000"
-            iconName="email"
-            secureEntry={false}
-          />
-          <TextInputWithIcon
-            label="Create Password"
-            placeholder="Enter your password"
-            iconName="lock-outline"
-            secureEntry={true}
-          />
-        </View>
-       
-        <Button title="Sign In" onPress={() => {}} />
-        <GoogleButton title="Sign In With Google" onPress={() => {}} />
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={styles.content}>
+          <View style={styles.greetings}>
+            <Text style={styles.boldText}>Welcome,</Text>
+            <Text style={styles.lightText}>Create new account!</Text>
+            <Image
+              style={styles.arrow}
+              source={require("../assets/Onboard/arrow.png")}
+            />
+          </View>
+          <View style={styles.formGroup}>
+            <TextInputWithIcon
+              label="Full Name"
+              placeholder="Enter your full name"
+              iconName="email"
+              secureEntry={false}
+            />
+            <TextInputWithIcon
+              label="Email"
+              placeholder="Enter your email"
+              iconName="email"
+              secureEntry={false}
+            />
+            <TextInputWithIcon
+              label="Phone"
+              placeholder="(000) 000-0000"
+              iconName="email"
+              secureEntry={false}
+            />
+            <TextInputWithIcon
+              label="Create Password"
+              placeholder="Enter your password"
+              iconName="lock-outline"
+              secureEntry={true}
+            />
+          </View>
 
-        <View style={styles.groupBottom}>
-          <Text style={styles.textLeft}>Don't have an account?</Text>
-          <Link href={'/'} asChild>
-          <Text style={styles.textRight}>Sign In</Text>
-          </Link>
+          <Button title="Sign In" onPress={() => {}} />
+          <GoogleButton title="Sign In With Google" onPress={() => {}} />
+
+          <View style={styles.groupBottom}>
+            <Text style={styles.textLeft}>Don't have an account?</Text>
+            <Link href={"/"} asChild>
+              <Text style={styles.textRight}>Sign In</Text>
+            </Link>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </View>
   );
 };
@@ -84,13 +84,14 @@ export default RegisterPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexGrow:1,
+    flexGrow: 1,
     alignItems: "flex-start",
     backgroundColor: "#fff",
   },
   content: {
     paddingHorizontal: widthPercentageToDP(5),
-    paddingTop: heightPercentageToDP(5),
+    paddingTop: heightPercentageToDP(3),
+    paddingBottom:heightPercentageToDP(2)
   },
   formGroup: {
     paddingTop: heightPercentageToDP(2),
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
   groupBottom: {
     marginTop: heightPercentageToDP(3),
     flexDirection: "row",
-    justifyContent:'center'
+    justifyContent: "center",
   },
   textLeft: {
     fontFamily: "Mulish_400Regular",
@@ -152,7 +153,6 @@ const styles = StyleSheet.create({
   textRight: {
     fontFamily: "Mulish_700Bold",
     fontSize: fontSizeToDp(3.3),
-    paddingLeft:6
-
+    paddingLeft: 6,
   },
 });

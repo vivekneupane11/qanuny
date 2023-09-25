@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     borderWidth:StyleSheet.hairlineWidth,
     borderColor:THEME.COLORS.border,
     borderRadius:6,
-    marginTop:heightPercentageToDP(0.8),
+    marginTop:heightPercentageToDP(1),
 
     marginBottom:heightPercentageToDP(0.2)
 

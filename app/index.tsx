@@ -69,7 +69,9 @@ const LoginPage = () => {
             </Link>
           </View>
         </View>
-        <Button title="Sign In" onPress={() => {}} />
+       <Link href={'/(tabs)/home'} asChild>
+       <Button title="Sign In" onPress={() => {}} />
+       </Link>
         <GoogleButton title="Sign In With Google" onPress={() => {}} />
 
         <View style={styles.groupBottom}>

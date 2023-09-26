@@ -2,11 +2,11 @@
 import { addDays, format } from "date-fns";
 import React, { useState } from "react";
 import {
-    FlatList,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { THEME } from "../../constants/Theme";
 import { fontSizeToDp, heightPercentageToDP } from "../../utils/Responsive";
@@ -92,6 +92,7 @@ const DatePicker: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: heightPercentageToDP(2),
+ 
   },
   dateHead: {
     textAlign: "center",
@@ -101,7 +102,8 @@ const styles = StyleSheet.create({
     fontSize: fontSizeToDp(4),
   },
   dateChip: {
-    margin: 4,
+    marginVertical: 4,
+    marginHorizontal:6,
     paddingHorizontal: 7,
     paddingVertical: 12,
     justifyContent: "center",

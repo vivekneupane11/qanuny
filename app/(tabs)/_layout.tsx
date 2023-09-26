@@ -3,7 +3,7 @@ import { AntDesign, Entypo, Feather, FontAwesome5, Ionicons } from "@expo/vector
 import { Tabs } from "expo-router";
 export default () => {
   return (
-    <Tabs>
+    <Tabs >
       <Tabs.Screen
         name="home"
         options={{

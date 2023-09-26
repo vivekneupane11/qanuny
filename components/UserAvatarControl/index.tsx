@@ -1,12 +1,17 @@
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { SimpleLineIcons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { THEME } from '../../constants/Theme';
-import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from "../../utils/Responsive";
+import { THEME } from "../../constants/Theme";
+import {
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "../../utils/Responsive";
 import RoundAvatar from "../Avatar";
-import Chip from '../Chip';
+import Chip from "../Chip";
+import MessageChip from "../MessageChip";
 
-export default function UserAvatarControl() {
+export default function UserAvatarControl({ message }: { message?: boolean }) {
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
@@ -17,16 +22,15 @@ export default function UserAvatarControl() {
           size={60}
         />
         <View style={styles.userInfo}>
-            <Text style={styles.userName}>Micheal Jordan</Text>
-            <View style={styles.userActiveInfo}>
+          <Text style={styles.userName}>Micheal Jordan</Text>
+          <View style={styles.userActiveInfo}>
             <SimpleLineIcons name="clock" size={12} color="black" />
             <Text style={styles.time}>10:30 pm</Text>
-
-            </View>
+          </View>
         </View>
       </View>
       <View style={styles.rightSection}>
-      <Chip/>
+        {message ? <MessageChip /> : <Chip />}
       </View>
     </View>
   );
@@ -35,34 +39,33 @@ export default function UserAvatarControl() {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: heightPercentageToDP(1),
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center'
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   leftSection: {
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   rightSection: {},
-  userInfo:{
-    paddingHorizontal:widthPercentageToDP(2)
-
+  userInfo: {
+    paddingHorizontal: widthPercentageToDP(2),
   },
-  userName:{
-fontFamily:'Mulish_700Bold',
-fontSize:fontSizeToDp(4.1)
+  userName: {
+    fontFamily: "Mulish_700Bold",
+    fontSize: fontSizeToDp(4.1),
   },
-  time:{
-    paddingHorizontal:4,
-    fontFamily:'Mulish_400Regular',
-    fontSize:fontSizeToDp(3.1),
-    color:THEME.COLORS.secondaryDarkTextColor
+  time: {
+    paddingHorizontal: 4,
+    fontFamily: "Mulish_400Regular",
+    fontSize: fontSizeToDp(3.1),
+    color: THEME.COLORS.secondaryDarkTextColor,
   },
-  userActiveInfo:{
-    flexDirection:'row',
-    justifyContent:'flex-start',
-    alignItems:'center',
-    paddingTop:4
-  }
+  userActiveInfo: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingTop: 4,
+  },
 });

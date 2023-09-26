@@ -1,12 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { heightPercentageToDP } from '../../utils/Responsive'
+import { THEME } from '../../constants/Theme'
+import { fontSizeToDp, heightPercentageToDP } from '../../utils/Responsive'
 
-export default function SectionHeader() {
+interface SectionHeaderProps {
+    leftTitle:string,
+    rightTitle:string
+}
+export default function SectionHeader({leftTitle,rightTitle}:SectionHeaderProps) {
   return (
     <View style={styles.container}>
-<Text style={styles.textLeft}>Todays Appointment</Text>
-<Text style={styles.textRight}>See All</Text>
+<Text style={styles.textLeft}>{leftTitle}</Text>
+<Text style={styles.textRight}>{rightTitle}</Text>
 
     </View>
   )
@@ -20,9 +25,12 @@ const styles = StyleSheet.create({
 
     },
     textLeft:{
-
+        fontFamily:'Mulish_700Bold',
+        fontSize:fontSizeToDp(4.4)
     },
     textRight:{
-
+fontFamily:'Mulish_400Regular',
+fontSize:fontSizeToDp(3.1),
+color:THEME.COLORS.secondaryDarkTextColor
     }
 })

@@ -1,6 +1,7 @@
 import * as Linking from "expo-linking";
 import { useRouter } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import Banner from "../../components/Banner";
 import SearchBar from "../../components/SearchInput";
 import TabsHeader from "../../components/TabsHeader";
 import {
@@ -23,6 +24,7 @@ const ForgetPassword = () => {
     <ScrollView contentContainerStyle={{flexGrow:1}}>
     <View style={styles.content}>
       <SearchBar/>
+      <Banner/>
      <Text>hi</Text>
       </View>
     </ScrollView>

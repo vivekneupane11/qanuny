@@ -1,4 +1,5 @@
 // DatePicker.tsx
+import { MaterialIcons } from '@expo/vector-icons';
 import { addDays, format } from "date-fns";
 import React, { useState } from "react";
 import {
@@ -10,7 +11,6 @@ import {
 } from "react-native";
 import { THEME } from "../../constants/Theme";
 import { fontSizeToDp, heightPercentageToDP } from "../../utils/Responsive";
-
 const DatePicker: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
@@ -48,11 +48,11 @@ const DatePicker: React.FC = () => {
               color:
                 item.toDateString() === selectedDate.toDateString()
                   ? "white"
-                  : THEME.COLORS.secondaryDarkTextColor,
+                  : THEME.COLORS.secondaryLightTextColor,
               fontFamily:
                 item.toDateString() === selectedDate.toDateString()
                   ? "Mulish_700Bold"
-                  : "Mulish_300Light",
+                  : "Mulish_500Medium",
             },
           ]}
         >
@@ -76,7 +76,11 @@ const DatePicker: React.FC = () => {
   );
   return (
     <View style={styles.container}>
+      <View style={styles.content}>
+      <MaterialIcons name="keyboard-arrow-left" size={24} color="black" />
       <Text style={styles.dateHead}> {formatDate(selectedDate)}</Text>
+      <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+      </View>
 
       <FlatList
         horizontal
@@ -91,13 +95,18 @@ const DatePicker: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: heightPercentageToDP(2),
- 
+    paddingVertical: heightPercentageToDP(3),
+  },
+  content:{
+flexDirection:'row',
+alignItems:'center',
+justifyContent:'space-between',
+paddingTop:heightPercentageToDP(1),
+paddingBottom: heightPercentageToDP(2.5),
+
   },
   dateHead: {
     textAlign: "center",
-    paddingTop: 2,
-    paddingBottom: heightPercentageToDP(2),
     fontFamily: "Mulish_700Bold",
     fontSize: fontSizeToDp(4),
   },

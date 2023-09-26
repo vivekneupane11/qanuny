@@ -5,6 +5,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Banner from "../../components/Banner";
 import DatePicker from "../../components/Datepicker";
 import SearchBar from "../../components/SearchInput";
+import SectionHeader from "../../components/SectionHeader";
 import TabsHeader from "../../components/TabsHeader";
 import {
   heightPercentageToDP,
@@ -28,6 +29,7 @@ const Home = () => {
       <SearchBar/>
       <Banner/>
   <DatePicker/>
+  <SectionHeader/>
      <Text>hi</Text>
       </View>
     </ScrollView>

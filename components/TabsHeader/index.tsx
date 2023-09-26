@@ -40,7 +40,7 @@ const TabsHeader = ({
           source={{
             uri: "https://cdn.britannica.com/68/178268-050-5B4E7FB6/Tom-Cruise-2013.jpg?w=400&h=300&c=crop",
           }}
-          size={44}
+          size={40}
           online={true}
         />
       )}
@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   headerLogo: {
-    height: heightPercentageToDP(3.5),
+    height: heightPercentageToDP(3.2),
   },
 });

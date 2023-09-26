@@ -19,7 +19,7 @@ export default function UserAvatarControl({ message }: { message?: boolean }) {
           source={{
             uri: "https://cdn.britannica.com/68/178268-050-5B4E7FB6/Tom-Cruise-2013.jpg?w=400&h=300&c=crop",
           }}
-          size={60}
+          size={55}
         />
         <View style={styles.userInfo}>
           <Text style={styles.userName}>Micheal Jordan</Text>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontFamily: "Mulish_700Bold",
-    fontSize: fontSizeToDp(4.1),
+    fontSize: fontSizeToDp(3.8),
   },
   time: {
     paddingHorizontal: 4,

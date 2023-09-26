@@ -1,4 +1,4 @@
-import { Feather, Fontisto } from "@expo/vector-icons";
+import { Feather, Fontisto, Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
@@ -45,7 +45,8 @@ export default function Banner() {
         <View>
           <View style={[styles.bannerGroup]}>
             <View style={styles.iconContainer}>
-              <Feather name="video" size={14} color="#000" />
+             
+              <Ionicons name="hammer-outline" size={14} color="#000" />
             </View>
             <Text style={styles.greetName}>375</Text>
           </View>
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     paddingVertical: heightPercentageToDP(1.8),
     backgroundColor: THEME.COLORS.primary,
     marginTop: heightPercentageToDP(2.5),
-    borderRadius: 12,
+    borderRadius: 14,
   },
   bannerTop: {
     flexDirection: "row",
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 8,
     borderRadius: 999,
-    marginRight: 9,
+    marginRight: 6,
   },
   label: {
     color: "#fff",

@@ -1,7 +1,9 @@
 import * as Linking from "expo-linking";
 import { useRouter } from "expo-router";
+import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Banner from "../../components/Banner";
+import DatePicker from "../../components/Datepicker";
 import SearchBar from "../../components/SearchInput";
 import TabsHeader from "../../components/TabsHeader";
 import {
@@ -9,8 +11,8 @@ import {
   widthPercentageToDP
 } from "../../utils/Responsive";
 
-const ForgetPassword = () => {
-
+const Home = () => {
+  const [date,setDate] = useState<any>( new Date())
   const router = useRouter();
   const url = Linking.useURL();
 
@@ -25,6 +27,7 @@ const ForgetPassword = () => {
     <View style={styles.content}>
       <SearchBar/>
       <Banner/>
+  <DatePicker/>
      <Text>hi</Text>
       </View>
     </ScrollView>
@@ -32,7 +35,7 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default Home;
 
 const styles = StyleSheet.create({
   container: {

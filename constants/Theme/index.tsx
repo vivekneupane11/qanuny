@@ -4,7 +4,7 @@ export const THEME ={
         primaryTextColor:'#111515',
         secondaryDarkTextColor:"#666666",
         secondaryLightTextColor:"#A3A3A3",
-        border:' #F0F0F0',
+        borderColor:' #F0F0F0',
         iconColor:'#A3A3A3',
         lightGrayBackground:'#F4F4F4',
         green:'#02C875',

@@ -52,8 +52,8 @@ focused?<Entypo name="message" size={24} color="black" />
         name="profile"
         options={{
           tabBarLabelStyle: { display: "none" },
+          headerShown:false,
 
-          headerTitle: "My Account",
           tabBarIcon: ({ color, size,focused }) => (
            focused?<FontAwesome5 name="user-alt" size={24} color="black" />:<AntDesign name="user" size={24} color="black" /> 
           ),

@@ -4,9 +4,9 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../utils/Responsive";
 import RoundAvatar from "../Avatar";
 

@@ -6,7 +6,9 @@ export const THEME ={
         secondaryLightTextColor:"#A3A3A3",
         border:' #F0F0F0',
         iconColor:'#A3A3A3',
-        lightGrayBackground:'#F4F4F4'
+        lightGrayBackground:'#F4F4F4',
+        green:'#02C875',
+        silver:'#e0e0e0'
         
     },
     IMAGES:{

@@ -1,6 +1,7 @@
 import { SimpleLineIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import {
   fontSizeToDp,
@@ -12,8 +13,9 @@ import Chip from "../Chip";
 import MessageChip from "../MessageChip";
 
 export default function UserAvatarControl({ message }: { message?: boolean }) {
+  const router= useRouter()
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={()=>router.push('/chat')} style={styles.container}>
       <View style={styles.leftSection}>
         <RoundAvatar
           source={{
@@ -32,7 +34,7 @@ export default function UserAvatarControl({ message }: { message?: boolean }) {
       <View style={styles.rightSection}>
         {message ? <MessageChip /> : <Chip />}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -44,6 +44,10 @@ const StackLayout = () => {
         options={{ headerTitle: "Password Recovery", headerShown: false }}
       />
        <Stack.Screen
+        name="chat"
+        options={{ headerTitle: "Chat", headerShown: false }}
+      />
+       <Stack.Screen
         name="otp"
         options={{ headerTitle: "OTP Verify", headerShown: false }}
       />

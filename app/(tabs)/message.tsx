@@ -6,8 +6,8 @@ import SectionHeader from "../../components/SectionHeader";
 import TabsHeader from "../../components/TabsHeader";
 import UserAvatarControl from "../../components/UserAvatarControl";
 import {
-	heightPercentageToDP,
-	widthPercentageToDP,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../utils/Responsive";
 
 const data = [

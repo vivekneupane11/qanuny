@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { THEME } from '../../constants/Theme';
 
 interface RoundAvatarProps {
   source?: any; // Image source
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 10,
     height: 10,
-    backgroundColor: 'yellow', 
+    backgroundColor: THEME.COLORS.green, 
     borderRadius: 999, 
     bottom: 4,
     right: 2,

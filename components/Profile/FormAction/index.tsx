@@ -1,12 +1,14 @@
 import { SimpleLineIcons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { THEME } from "../../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../../utils/Responsive";
+import Button from "../../Buttons";
 import TransparentTextInput from "../TransparentInput";
 
 export default function FormActions() {
@@ -57,6 +59,9 @@ export default function FormActions() {
         <Text style={styles.labelBold}>Lawyer's Degree Name</Text>
         <TransparentTextInput placeholder="Smith" />
       </View>
+     <Link href="/(tabs)/feedback" asChild>
+     <Button title="Submit It"/>
+     </Link>
     </View>
   );
 }

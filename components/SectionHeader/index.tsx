@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { THEME } from '../../constants/Theme'
-import { fontSizeToDp, heightPercentageToDP } from '../../utils/Responsive'
+import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive'
 
 interface SectionHeaderProps {
     leftTitle:string,
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
         paddingVertical:heightPercentageToDP(2),
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between'
-
+        justifyContent:'space-between',
+        width:widthPercentageToDP(90)
     },
     textLeft:{
         fontFamily:'Mulish_700Bold',

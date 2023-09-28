@@ -39,7 +39,7 @@ focused?<Entypo name="message" size={24} color="black" />
       />
    
       <Tabs.Screen
-        name="feed"
+        name="feedback"
         options={{
           tabBarLabelStyle: { display: "none" },
           headerShown: false,

@@ -12,10 +12,12 @@ import RoundAvatar from "../Avatar";
 import Chip from "../Chip";
 import MessageChip from "../MessageChip";
 
-export default function UserAvatarControl({ message ,chipText,badge }: { message?: boolean,badge?: boolean,chipText?:string }) {
+export default function UserAvatarControl({ message ,chipText,badge,to }: { message?: boolean,badge?: boolean,chipText?:string,to?:string }) {
+  console.log("🚀 ~ file: index.tsx:16 ~ UserAvatarControl ~ to:", to)
   const router= useRouter()
+  
   return (
-    <TouchableOpacity onPress={()=>router.push('/chat')} style={styles.container}>
+    <TouchableOpacity onPress={()=>router.push(`${to?to:'/chat'}`)} style={styles.container}>
       <View style={styles.leftSection}>
         <RoundAvatar
           source={{

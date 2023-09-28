@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import { fontSizeToDp, heightPercentageToDP } from "../../utils/Responsive";
 
-export default function DocumentSection() {
+export default function DocumentSection({ action }: { action?: boolean }) {
   return (
     <View style={styles.container}>
       <View style={styles.leftContent}>
@@ -25,9 +25,16 @@ export default function DocumentSection() {
         </View>
         <Text style={styles.dateText}>09-09-23</Text>
       </View>
-        <View style={styles.chip}>
-          <Text style={styles.rightText}>Seen</Text>
-        </View>
+      {action ? (
+         <View style={styles.iconContainer}>
+         <Entypo name="dots-three-vertical" size={12} color={THEME.COLORS.iconColor} />
+       </View>
+      ) : (
+      
+         <View style={styles.chip}>
+         <Text style={styles.rightText}>Seen</Text>
+       </View>
+      )}
     </View>
   );
 }
@@ -55,20 +62,19 @@ const styles = StyleSheet.create({
     fontFamily: "Mulish_400Regular",
     fontSize: fontSizeToDp(2.5),
   },
-  dateText:{
+  dateText: {
     fontFamily: "Mulish_400Regular",
     fontSize: fontSizeToDp(2.6),
-    marginLeft:4
+    marginLeft: 5,
   },
   centerContent: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent:'space-between',
+    justifyContent: "space-between",
   },
   rightText: {
-    fontSize:fontSizeToDp(3),
+    fontSize: fontSizeToDp(3),
     fontFamily: "Mulish_400Regular",
-
   },
   icon: {
     marginRight: 2,
@@ -80,4 +86,10 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.COLORS.lightGrayBackground,
     borderRadius: 50,
   },
+  iconContainer:{
+    backgroundColor:THEME.COLORS.lightGrayBackground,
+    padding:10,
+    borderRadius:999,
+    
+  }
 });

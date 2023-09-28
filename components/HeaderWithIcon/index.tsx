@@ -1,4 +1,4 @@
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -8,13 +8,13 @@ import {
   widthPercentageToDP,
 } from "../../utils/Responsive";
 
-const HeaderWithIcon = ({ title, logo,children }: { title?: string; logo?: boolean,children?:React.ReactNode }) => {
+const HeaderWithIcon = ({ title, logo,children,color }: { title?: string; logo?: boolean,children?:React.ReactNode,color?:string }) => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <MaterialIcons name="keyboard-arrow-left" size={28} color="#fff" />
+        <MaterialIcons name="keyboard-arrow-left" size={28} color={color} />
       </TouchableOpacity>
       {logo ? (
         <Image
@@ -24,9 +24,9 @@ const HeaderWithIcon = ({ title, logo,children }: { title?: string; logo?: boole
           source={require("../../assets/Onboard/logo.png")}
         />
       ) : (
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title,{color:color}]}>{title}</Text>
       )}
-<AntDesign name="export" size={24} color="#fff" />
+{children}
     </View>
   );
 };
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontFamily: "Mulish_700Bold",
     textAlign: "center",
     flex:1,
-    color:'#fff'
+    color:'#000'
   },
   headerLogo: {
     height: heightPercentageToDP(4),

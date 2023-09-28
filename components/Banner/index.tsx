@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.COLORS.primary,
     marginTop: heightPercentageToDP(2.5),
     borderRadius: 14,
+    width:'100%'
   },
   bannerTop: {
     flexDirection: "row",

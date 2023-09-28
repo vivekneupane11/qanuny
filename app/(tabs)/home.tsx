@@ -28,7 +28,7 @@ const Home = () => {
       <TabsHeader title="Mot de passe oublié" logo={true} avatar={true} />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.content}>
-          <SearchBar />
+          <SearchBar transparent={false} />
           <Banner />
           <DatePicker />
           <AppointmentSection />

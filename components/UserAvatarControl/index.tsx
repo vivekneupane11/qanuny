@@ -12,7 +12,7 @@ import RoundAvatar from "../Avatar";
 import Chip from "../Chip";
 import MessageChip from "../MessageChip";
 
-export default function UserAvatarControl({ message }: { message?: boolean }) {
+export default function UserAvatarControl({ message ,chipText,badge }: { message?: boolean,badge?: boolean,chipText?:string }) {
   const router= useRouter()
   return (
     <TouchableOpacity onPress={()=>router.push('/chat')} style={styles.container}>
@@ -32,7 +32,7 @@ export default function UserAvatarControl({ message }: { message?: boolean }) {
         </View>
       </View>
       <View style={styles.rightSection}>
-        {message ? <MessageChip /> : <Chip />}
+        {message ? <MessageChip badge={badge} chipText={chipText} /> : <Chip />}
       </View>
     </TouchableOpacity>
   );

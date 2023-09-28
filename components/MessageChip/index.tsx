@@ -3,13 +3,15 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { THEME } from '../../constants/Theme';
 import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
 
-export default function MessageChip() {
+export default function MessageChip({badge,chipText}:{badge?:boolean,chipText?:string}) {
   return (
     <TouchableOpacity style={styles.container}>
-    <Text style={styles.chipText}>1 min ago </Text>
-    <Text style={styles.badge}>
-        3
-    </Text>
+    <Text style={styles.chipText}>{chipText} </Text>
+  {
+    badge &&   <Text style={styles.badge}>
+    3
+</Text>
+  }
     </TouchableOpacity>
 
   )

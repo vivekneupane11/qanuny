@@ -40,7 +40,7 @@ export default function UserAvatarControl({ message ,chipText,badge }: { message
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: heightPercentageToDP(1),
+    paddingVertical: heightPercentageToDP(1.5),
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

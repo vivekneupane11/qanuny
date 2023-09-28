@@ -18,7 +18,8 @@ export default function SectionHeader({leftTitle,rightTitle}:SectionHeaderProps)
 }
 const styles = StyleSheet.create({
     container:{
-        paddingVertical:heightPercentageToDP(2),
+        paddingTop:heightPercentageToDP(3),
+        paddingBottom:heightPercentageToDP(2),
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',

@@ -6,10 +6,10 @@ import { THEME } from '../../constants/Theme'
 import { fontSizeToDp, heightPercentageToDP } from '../../utils/Responsive'
 import RoundAvatar from '../Avatar'
 
-export default function Transaction() {
+export default function TransactionClient() {
     const router = useRouter()
   return (
-    <TouchableOpacity onPress={()=>router.push('/feedback/1')} style={styles.container}>
+    <TouchableOpacity onPress={()=>router.push('/feedback/client')} style={styles.container}>
        <View style={styles.contentLeft}>
        <Checkbox style={styles.checkbox}/>
         <View style={styles.group}>
@@ -26,14 +26,19 @@ export default function Transaction() {
         </View>
         </View>
        </View>
+       <View>
        <Text style={styles.typeText}>Personal Law</Text>
-       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Pending</Text>
-       </TouchableOpacity>
+       <Text style={styles.id}>Lorem Ipsum</Text>
+
+       </View>
        <View>
         <Text style={styles.price}>$550.50</Text>
         <Text style={styles.date}>15.05.023</Text>
        </View>
+       <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>UnPaid</Text>
+       </TouchableOpacity>
+     
     </TouchableOpacity>
   )
 }
@@ -66,12 +71,15 @@ const styles = StyleSheet.create({
 
     },
     typeText:{
-        fontSize:fontSizeToDp(2.5)
+        fontSize:fontSizeToDp(2.5),
+        fontFamily:'Mulish_600SemiBold',
+        paddingLeft:5
+
     },
     button:{
-        backgroundColor:'#FFA500',
+        backgroundColor: "#E0FFDD",
         paddingVertical:9,
-        paddingHorizontal:10,
+        paddingHorizontal:12,
         borderRadius:50
     },
     buttonText:{

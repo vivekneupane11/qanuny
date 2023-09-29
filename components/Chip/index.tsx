@@ -27,6 +27,6 @@ chipText:{
     fontFamily:'Mulish_400Regular',
     fontSize:fontSizeToDp(3),
     color:THEME.COLORS.secondaryDarkTextColor,
-    paddingLeft:10
+    paddingLeft:widthPercentageToDP(2.5)
 }
 })

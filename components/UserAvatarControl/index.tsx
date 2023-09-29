@@ -70,6 +70,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingTop: 4,
+    paddingTop: heightPercentageToDP(0.6),
   },
 });

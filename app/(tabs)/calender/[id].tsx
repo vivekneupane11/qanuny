@@ -6,9 +6,9 @@ const NewsDetailsPage = () => {
 
   return (
     <View>
-      <Stack.Screen options={{ headerTitle: `News #${id}` }} />
+      <Stack.Screen options={{ headerTitle: `News #${id}`,headerShown:false }} />
 
-      <Text>My News: {id}</Text>
+      <Text>My Calender: {id}</Text>
     </View>
   );
 };

@@ -27,7 +27,7 @@ focused?<Entypo name="message" size={24} color="black" />
         }}
       />
       <Tabs.Screen
-        name="list"
+        name="calender"
         options={{
           tabBarLabelStyle: { display: "none" },
 

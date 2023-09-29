@@ -5,7 +5,7 @@ import SectionHeader from "../../../components/SectionHeader";
 import { THEME } from "../../../constants/Theme";
 import { widthPercentageToDP } from '../../../utils/Responsive';
 
-const ListPage = () => {
+const CalenderPage = () => {
 	return (
 	<View style={styles.container}>
 <HeaderWithIcon title="Calendrier">
@@ -28,7 +28,7 @@ const ListPage = () => {
 	);
 };
 
-export default ListPage;
+export default CalenderPage;
 
 const styles = StyleSheet.create({
 	container:{

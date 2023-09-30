@@ -144,6 +144,6 @@ const styles = StyleSheet.create({
     fontFamily: "Mulish_400Regular",
     fontSize: fontSizeToDp(2.5),
     paddingVertical: 3,
-    paddingHorizontal: 5,
+    paddingHorizontal: widthPercentageToDP(1.25),
   },
 });

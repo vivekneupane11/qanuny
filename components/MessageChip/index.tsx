@@ -35,10 +35,10 @@ chipText:{
 badge:{
     backgroundColor:'#000',
     borderRadius:999,
-    fontSize:fontSizeToDp(3),
+    fontSize:fontSizeToDp(2.5),
     color:'#fff',
-    height:25,
-    width:25,
+aspectRatio:1,
+    width:widthPercentageToDP(6),
     justifyContent:'center',
     alignItems:'center',
     textAlign:'center',

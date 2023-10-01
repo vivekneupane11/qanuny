@@ -10,7 +10,7 @@ import { widthPercentageToDP } from "../../../utils/Responsive";
 const CalenderDetailPage = () => {
   return (
     <View style={styles.container}>
-        <Stack.Screen
+      <Stack.Screen
         options={{ headerTitle: `userprofile`, headerShown: false }}
       />
       <HeaderWithIcon title="Calendrier">
@@ -28,9 +28,12 @@ const CalenderDetailPage = () => {
           />
         </View>
       </HeaderWithIcon>
-      <View style={styles.content}>
+      <View style={{ paddingHorizontal: widthPercentageToDP(5) }}>
         <SectionHeader leftTitle="Your Schedule" rightTitle="See All" />
-        <CalenderWithMultiDot/>
+      </View>
+
+      <View style={styles.content}>
+        <CalenderWithMultiDot />
       </View>
     </View>
   );
@@ -43,14 +46,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  content:{
-    paddingHorizontal: widthPercentageToDP(5),
-	flex:1
-
+  content: {
+    flex: 1,
   },
-    rowGroup: {
+  rowGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-
 });

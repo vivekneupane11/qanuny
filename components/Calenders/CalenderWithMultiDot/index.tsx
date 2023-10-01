@@ -19,7 +19,7 @@ const CalenderWithMultiDot = () => {
     return CalendarUtils.getCalendarDateString(newDate);
   };
 
-  const onDayPress = useCallback((day) => {
+  const onDayPress = useCallback((day:any) => {
     setSelected(day.dateString);
   }, []);
 

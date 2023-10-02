@@ -1,18 +1,18 @@
 import * as Linking from "expo-linking";
-import { Stack, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
-import HeaderWithIcon from "../../components/HeaderWithIcon";
-import SearchBar from "../../components/SearchInput";
-import SectionHeader from "../../components/SectionHeader";
-import { THEME } from "../../constants/Theme";
+import HeaderWithIcon from "../../../components/HeaderWithIcon";
+import SearchBar from "../../../components/SearchInput";
+import SectionHeader from "../../../components/SectionHeader";
+import { THEME } from "../../../constants/Theme";
 import {
     fontSizeToDp,
     heightPercentageToDP,
     widthPercentageToDP,
-} from "../../utils/Responsive";
+} from "../../../utils/Responsive";
 
 import { Entypo } from "@expo/vector-icons";
-import SmallCardComponent from "../../components/LawyerCard/SmallCard";
+import SmallCardComponent from "../../../components/LawyerCard/SmallCard";
 
 const Chip = ({ title, highlight }: { title: string; highlight: boolean }) => (
   <View style={[styles.chip, highlight && styles.highlight]}>
@@ -32,7 +32,6 @@ const FeedDetail = () => {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ headerShown: false }} />
 
       <HeaderWithIcon title={"Search Lawyer"} color="#000">
         <Entypo

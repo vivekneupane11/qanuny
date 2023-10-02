@@ -1,12 +1,13 @@
 import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { THEME } from '../../constants/Theme';
 import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
 
 const SmallCardComponent = ({ imageSource, name, designation, price, country, rating }:any) => {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity onPress={()=>router.push('/search/user')} style={styles.card}>
       <View style={styles.iconContainer}>
       <AntDesign name="hearto" size={18} color="black" />
       </View>
@@ -38,7 +39,7 @@ const SmallCardComponent = ({ imageSource, name, designation, price, country, ra
           <Text style={styles.ratingText}>{rating}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -55,7 +56,7 @@ borderColor:THEME.COLORS.secondaryLightTextColor,
     },
     image: {
       width: '100%',
-      aspectRatio:3/2.5,
+      aspectRatio:3/2.2,
       resizeMode: 'contain',
       borderRadius: 8,
       borderBottomLeftRadius:0,

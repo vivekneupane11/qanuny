@@ -12,6 +12,7 @@ import {
 } from "../../../utils/Responsive";
 
 import ImageBackgroundHead from "../../../components/ImageBackground";
+import Testimonial from "../../../components/Testimonial";
 import { THEME } from "../../../constants/Theme";
 
 const FeedDetail = () => {
@@ -31,6 +32,7 @@ const FeedDetail = () => {
         contentContainerStyle={{ flexGrow: 1 }}
       >
       <ImageBackgroundHead/>
+      <Testimonial/>
       </ScrollView>
     </View>
   );

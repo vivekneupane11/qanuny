@@ -4,10 +4,10 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { THEME } from '../../constants/Theme';
 import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
 
-const CardComponent = ({ imageSource, name, designation, price, country, rating }:any) => {
+const SmallCardComponent = ({ imageSource, name, designation, price, country, rating }:any) => {
   return (
     <View style={styles.card}>
-       <View style={styles.iconContainer}>
+      <View style={styles.iconContainer}>
       <AntDesign name="hearto" size={18} color="black" />
       </View>
       <Image
@@ -47,16 +47,16 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       backgroundColor: 'white',
       borderRadius: 8,
-     marginRight:20,
 borderWidth:StyleSheet.hairlineWidth,
 borderColor:THEME.COLORS.secondaryLightTextColor,
-      width:widthPercentageToDP(55),
-      marginBottom:heightPercentageToDP(4)
+      width:widthPercentageToDP(46),
+      marginBottom:heightPercentageToDP(4),
+      marginRight:5
     },
     image: {
       width: '100%',
       aspectRatio:3/2.5,
-      resizeMode: 'cover',
+      resizeMode: 'contain',
       borderRadius: 8,
       borderBottomLeftRadius:0,
       borderBottomRightRadius:0,
@@ -66,18 +66,18 @@ borderColor:THEME.COLORS.secondaryLightTextColor,
       justifyContent: 'space-between',
       alignItems: 'flex-start',
       marginTop: 4,
-      paddingHorizontal:5
+      paddingHorizontal:3
     },
     nameDesignationContainer: {
       flexDirection: 'column',
       padding:5
     },
     name: {
-      fontSize: fontSizeToDp(4),
+      fontSize: fontSizeToDp(3.5),
 fontFamily:'Mulish_700Bold' 
    },
     designation: {
-      fontSize: fontSizeToDp(2.6),
+      fontSize: fontSizeToDp(2.3),
       color: THEME.COLORS.secondaryDarkTextColor,
       paddingTop:5,
       fontFamily:'Mulish_300Light'
@@ -88,7 +88,7 @@ fontFamily:'Mulish_700Bold'
       paddingVertical:5
     },
     price: {
-      fontSize: fontSizeToDp(3.3),
+      fontSize: fontSizeToDp(2.5),
       fontFamily:'Mulish_700Bold',
       marginLeft: 8,
     },
@@ -105,14 +105,14 @@ fontFamily:'Mulish_700Bold'
       alignItems: 'center',
     },
     detailText: {
-      fontSize: fontSizeToDp(2.6),
+      fontSize: fontSizeToDp(2),
       color: THEME.COLORS.secondaryDarkTextColor,
       paddingVertical:5,
       fontFamily:'Mulish_300Light',
       marginLeft: 2,
     },
     ratingText: {
-      fontSize: fontSizeToDp(4),
+      fontSize: fontSizeToDp(2.5),
       color: THEME.COLORS.primary,
       paddingVertical:5,
       fontFamily:'Mulish_700Bold',
@@ -132,4 +132,4 @@ fontFamily:'Mulish_700Bold'
   });
   
 
-export default CardComponent;
+export default SmallCardComponent;

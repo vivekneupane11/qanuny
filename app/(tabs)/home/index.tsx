@@ -10,8 +10,8 @@ import SearchBar from "../../../components/SearchInput";
 import SectionHeader from "../../../components/SectionHeader";
 import TabsHeader from "../../../components/TabsHeader";
 import {
-    heightPercentageToDP,
-    widthPercentageToDP,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../../utils/Responsive";
 
 const Home = () => {
@@ -28,7 +28,10 @@ const Home = () => {
       <TabsHeader title="Mot de passe oublié" logo={true} avatar={true} />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.content}>
+          <TouchableOpacity onPress={()=>router.push('/search')}>
           <SearchBar transparent={false} />
+
+          </TouchableOpacity>
           <TouchableOpacity onPress={handleLogin} >
           <Banner />
 

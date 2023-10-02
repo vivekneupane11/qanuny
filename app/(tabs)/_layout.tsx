@@ -1,5 +1,4 @@
 import { AntDesign, Entypo, Feather, FontAwesome5, Ionicons } from "@expo/vector-icons";
-
 import { Tabs } from "expo-router";
 export default () => {
   return (
@@ -56,6 +55,17 @@ focused?<Entypo name="message" size={24} color="black" />
 
           tabBarIcon: ({ color, size,focused }) => (
            focused?<FontAwesome5 name="user-alt" size={24} color="black" />:<AntDesign name="user" size={24} color="black" /> 
+          ),
+        }}
+      />
+       <Tabs.Screen
+        name="search"
+        options={{
+          tabBarLabelStyle: { display: "none" },
+          headerShown:false,
+
+          tabBarIcon: ({ color, size,focused }) => (
+           focused?<Feather name="search" size={24} color="black" />:<AntDesign name="search1" size={24} color="black" /> 
           ),
         }}
       />

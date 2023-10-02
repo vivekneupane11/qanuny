@@ -1,14 +1,13 @@
 import { Stack, router, useGlobalSearchParams } from "expo-router";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
-import AboutUser from "../../../../components/Profile/AboutUserCard";
-import FormActions from "../../../../components/Profile/FormAction";
-import GradientView from "../../../../components/Profile/GradientView";
-import { THEME } from "../../../../constants/Theme";
+import NonProfessionalForm from "../../../components/Profile/FormAction/NonProfessionalForm";
+import NonProfessionalGradient from "../../../components/Profile/GradientView/NonProfessionalGradient";
+import { THEME } from "../../../constants/Theme";
 import {
-  fontSizeToDp,
-  heightPercentageToDP,
-  widthPercentageToDP,
-} from "../../../../utils/Responsive";
+    fontSizeToDp,
+    heightPercentageToDP,
+    widthPercentageToDP,
+} from "../../../utils/Responsive";
 
 const UserProfile = () => {
   const { id } = useGlobalSearchParams();
@@ -20,13 +19,12 @@ const UserProfile = () => {
       />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <GradientView />
+        <NonProfessionalGradient />
           <View style={styles.content}>
           <TouchableOpacity onPress={()=>router.push('/profile/nonprofessionalprofile')}>
 
-            <AboutUser />
             </TouchableOpacity>
-            <FormActions />
+            <NonProfessionalForm />
           </View>
         </ScrollView>
       </View>

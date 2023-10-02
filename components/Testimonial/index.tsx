@@ -1,4 +1,4 @@
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
@@ -8,6 +8,7 @@ import {
     widthPercentageToDP,
 } from "../../utils/Responsive";
 import RoundAvatar from "../Avatar";
+import Button from "../Buttons";
 
 const Testimonial = () => {
   return (
@@ -160,22 +161,79 @@ const Testimonial = () => {
         </Text>
       </View>
 
-      <View style={[ styles.marginTop]}>
-       <View style={styles.row}>
-       <FontAwesome
-          name="newspaper-o"
-          size={24}
-          color={THEME.COLORS.primary}
-        />
-        <Text style={[styles.boldText, styles.reviewTitle]}>
-          Bio
+      <View style={[styles.marginTop]}>
+        <View style={styles.row}>
+          <FontAwesome
+            name="newspaper-o"
+            size={24}
+            color={THEME.COLORS.primary}
+          />
+          <Text style={[styles.boldText, styles.reviewTitle]}>Bio</Text>
+        </View>
+
+        <Text style={[styles.description, styles.bioDescription]}>
+          Lorem ipsum dolor sit amet consectetur. Ac habitasse at vitae sem ut
+          enim viverra vestibulum nec. Pretium nam ut eget quis et aenean.
         </Text>
-       </View>
-        
-        <Text style={[styles.description,styles.bioDescription]}>
-        Lorem ipsum dolor sit amet consectetur. Ac habitasse at vitae sem ut
-        enim viverra vestibulum nec. Pretium nam ut eget quis et aenean.
-      </Text>
+      </View>
+
+      <View style={[styles.marginTop, styles.border]}>
+        <View style={styles.row}>
+          <Entypo
+            name="graduation-cap"
+            size={24}
+            color={THEME.COLORS.primary}
+          />
+          <Text style={[styles.boldText, styles.reviewTitle]}>
+            Lawyer Degree
+          </Text>
+        </View>
+        <Text style={styles.thin}>1997-2001</Text>
+        <Text
+          style={[styles.boldText, { paddingLeft: 0, paddingVertical: 10 }]}
+        >
+          National Law College
+        </Text>
+        <Text>Bachelor's of Laws-(L.L.B)</Text>
+      </View>
+
+      <View style={[styles.marginTop, styles.border]}>
+        <Text style={styles.thin}>1997-2001</Text>
+        <Text
+          style={[styles.boldText, { paddingLeft: 0, paddingVertical: 10 }]}
+        >
+          National Law College, London
+        </Text>
+        <Text>Master of Legislative Laws- (L.L.M)</Text>
+      </View>
+
+      <View style={[styles.marginTop, styles.border]}>
+        <View style={styles.row}>
+          <AntDesign name="like1" size={24} color={THEME.COLORS.primary} />
+          <Text style={[styles.boldText, styles.reviewTitle]}>
+            Area of Expertise
+          </Text>
+        </View>
+        <View style={styles.areaExpertise}>
+          <View style={styles.dot}></View>
+          <Text style={styles.thin}>Cybersecurity and Data Privacy Law</Text>
+        </View>
+        <View style={styles.areaExpertise}>
+          <View style={styles.dot}></View>
+          <Text style={styles.thin}>Healthcare and Medical Law</Text>
+        </View>
+        <View style={styles.areaExpertise}>
+          <View style={styles.dot}></View>
+          <Text style={styles.thin}>Banking and Finance Law</Text>
+        </View>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          style={[styles.button, styles.lightBackground]}
+          title="Retour"
+        />
+
+        <Button style={styles.button} title="Contacter" />
       </View>
     </View>
   );
@@ -259,6 +317,7 @@ const styles = StyleSheet.create({
   leftText: {
     width: "100%",
     fontFamily: "Mulish_700Bold",
+    paddingLeft:0
   },
   reviewTitle: {
     fontSize: fontSizeToDp(4.2),
@@ -274,11 +333,42 @@ const styles = StyleSheet.create({
     paddingTop: 4,
   },
   marginTop: {
-    marginTop: heightPercentageToDP(2),
+    marginTop: heightPercentageToDP(3),
   },
-  bioDescription:{
+  bioDescription: {
     marginTop: 0,
-
+  },
+  border: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingBottom: heightPercentageToDP(2),
+    borderColor: THEME.COLORS.lightBackground,
+  },
+  dot: {
+    height: 10,
+    width: 10,
+    backgroundColor: "orange",
+    borderRadius: 999,
+    marginRight: 10,
+  },
+  areaExpertise: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical:5
+  },
+  button: {
+    width: widthPercentageToDP(44),
+    backgroundColor: THEME.COLORS.primary,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    borderRadius: 9,
+  },
+  lightBackground: {
+    backgroundColor: THEME.COLORS.secondaryLightTextColor,
+  },
+  buttonContainer:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    paddingVertical:16
   }
 });
 

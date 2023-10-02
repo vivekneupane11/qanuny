@@ -13,7 +13,7 @@ import TransparentTextInput from "../TransparentInput";
 export default function NonProfessionalForm() {
   return (
     <View style={styles.container}>
-      <View style={[styles.header,{paddingBottom:10}]}>
+      <View style={[styles.header, { paddingBottom: 10 }]}>
         <Text style={styles.headerTitle}>User Name</Text>
         <SimpleLineIcons
           name="pencil"
@@ -62,7 +62,7 @@ export default function NonProfessionalForm() {
           <TransparentTextInput placeholder="4522" />
         </View>
       </View>
-   
+
       <View style={styles.row}>
         <Button
           style={[styles.button, styles.lightBackground]}
@@ -122,8 +122,11 @@ const styles = StyleSheet.create({
   grouper: {
     flexDirection: "row",
   },
-  row: { flexDirection: "row", justifyContent: "space-between",
-paddingVertical:heightPercentageToDP(4) },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: heightPercentageToDP(4),
+  },
   lightBackground: {
     backgroundColor: THEME.COLORS.secondaryLightTextColor,
   },

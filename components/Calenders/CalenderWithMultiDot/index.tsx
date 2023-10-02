@@ -220,11 +220,11 @@ const CalenderWithMultiDot = () => {
           <Text style={styles.dotInfo}>Disable</Text>
         </View>
         <View style={styles.group}>
-          <View style={[styles.dot,{backgroundColor:'red'}]}></View>
+          <View style={[styles.dot, { backgroundColor: "red" }]}></View>
           <Text style={styles.dotInfo}>Cancel</Text>
         </View>
         <View style={styles.group}>
-          <View style={[styles.dot,{backgroundColor:'green'}]}></View>
+          <View style={[styles.dot, { backgroundColor: "green" }]}></View>
           <Text style={styles.dotInfo}>Confirm</Text>
         </View>
       </View>

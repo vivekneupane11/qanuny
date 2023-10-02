@@ -8,7 +8,8 @@ export const THEME ={
         iconColor:'#A3A3A3',
         lightGrayBackground:'#F4F4F4',
         green:'#02C875',
-        silver:'#e0e0e0'
+        silver:'#e0e0e0',
+        lightBackground:'#F0F0F0'
         
     },
     IMAGES:{

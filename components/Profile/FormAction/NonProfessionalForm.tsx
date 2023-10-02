@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: widthPercentageToDP(90),
     paddingTop: heightPercentageToDP(2),
-    paddingBottom: heightPercentageToDP(4),
+    paddingBottom: heightPercentageToDP(2),
   },
   headerTitle: {
     fontFamily: "Mulish_500Medium",

@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
+import React, { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
+import { widthPercentageToDP } from '../../utils/Responsive';
 
 interface OTPInputProps {
   length?: number;
@@ -35,38 +36,40 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 6, onOTPChange }) => {
     setOTP(newOTP.join(''));
   };
 
-  return (
-    <View style={styles.container} >
-         <Text style={styles.label}>{"Enter The OTP Code"}</Text>
+  useEffect(() => {
 
-   <View style={styles.content}>
-   {Array(length)
-        .fill('')
-        .map((_, index) => (
-          <TextInput
-            key={index.toString()}
-            style={styles.input}
-            ref={(ref) => (inputRefs.current[index] = ref as TextInput)}
-            onChangeText={(text) => handleInputChange(text, index)}
-            onKeyPress={({ nativeEvent }) => {
-              if (nativeEvent.key === 'Backspace') {
-                handleBackspace(index);
-              }
-            }}
-            value={otp[index] || ''}
-            maxLength={1}
-            keyboardType="numeric"
-          />
-        ))}
-   </View>
+    inputRefs.current[0].focus();
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.label}>{"Enter The OTP Code"}</Text>
+      <View style={styles.content}>
+        {Array(length)
+          .fill('')
+          .map((_, index) => (
+            <TextInput
+              key={index.toString()}
+              style={styles.input}
+              ref={(ref) => (inputRefs.current[index] = ref as TextInput)}
+              onChangeText={(text) => handleInputChange(text, index)}
+              onKeyPress={({ nativeEvent }) => {
+                if (nativeEvent.key === 'Backspace') {
+                  handleBackspace(index);
+                }
+              }}
+              value={otp[index] || ''}
+              maxLength={1}
+              keyboardType="numeric"
+            />
+          ))}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    container:{
-
-    },
+  container: {},
   content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -76,17 +79,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: 'gray',
     borderRadius: 5,
-    fontSize: fontSizeToDp(4.8),
-    width: widthPercentageToDP(20),
-    height: heightPercentageToDP(9),
-    padding:10,
+    fontSize: 16, 
+    width: widthPercentageToDP(20), 
+    aspectRatio: 1, 
     textAlign: 'center',
-    fontFamily:'Mulish_900Black',
+    fontFamily: 'Mulish_900Black',
   },
-  label:{
-    fontFamily:'Mulish_500Medium',
-    fontSize:fontSizeToDp(3.8),
-      },
+  label: {
+    fontFamily: 'Mulish_500Medium',
+    fontSize: 14, 
+  },
 });
 
 export default OTPInput;

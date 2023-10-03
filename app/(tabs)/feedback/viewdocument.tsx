@@ -1,16 +1,17 @@
 import { Ionicons } from "@expo/vector-icons";
+import Checkbox from "expo-checkbox";
 import * as Linking from "expo-linking";
 import { Stack, useRouter } from "expo-router";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import DocumentSection from "../../../components/DocumentSection";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
 import SearchBar from "../../../components/SearchInput";
 import SectionHeader from "../../../components/SectionHeader";
-import UserAvatarControl from "../../../components/UserAvatarControl";
 import { THEME } from "../../../constants/Theme";
 import {
-  heightPercentageToDP,
-  widthPercentageToDP,
+    fontSizeToDp,
+    heightPercentageToDP,
+    widthPercentageToDP,
 } from "../../../utils/Responsive";
 
 const data = [
@@ -18,7 +19,7 @@ const data = [
   345, 345,
 ];
 
-const FeedbackDocument = () => {
+const ViewDocument = () => {
   const router = useRouter();
   const url = Linking.useURL();
 
@@ -29,7 +30,7 @@ const FeedbackDocument = () => {
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
-      <HeaderWithIcon title={"Documents clients2"} color="#000">
+      <HeaderWithIcon title={"My Documents"} color="#000">
         <Ionicons
           name="notifications"
           size={28}
@@ -47,13 +48,20 @@ const FeedbackDocument = () => {
           ListHeaderComponent={() => (
             <>
               <SearchBar transparent={false} />
-            
-
+           
         
-             <View style={{paddingTop:heightPercentageToDP(1.5)}}>
-             <UserAvatarControl chipText="See Files" message={true} badge={false} to="/feedback/viewdocument"  />
+             <View style={{paddingTop:heightPercentageToDP(0.4)}}>
              </View>
-              <SectionHeader leftTitle="All Documents" rightTitle="See All" />
+              <SectionHeader leftTitle="Recent Documents" rightTitle="See All" />
+              <View style={styles.grouper}>
+            <View style={[styles.grouper, { paddingVertical: 0 }]}>
+              <Checkbox style={styles.checkbox} />
+              <Text style={styles.title}>File Name</Text>
+            </View>
+            <Text style={styles.title}>File Type</Text>
+            <Text style={styles.title}>Upload Date</Text>
+            <Text style={styles.title}>Total</Text>
+          </View>
 
             </>
           )}
@@ -63,7 +71,7 @@ const FeedbackDocument = () => {
   );
 };
 
-export default FeedbackDocument;
+export default ViewDocument;
 
 const styles = StyleSheet.create({
   container: {
@@ -71,10 +79,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
-    paddingTop: heightPercentageToDP(6),
   },
   content: {
     paddingTop: heightPercentageToDP(1),
     width: widthPercentageToDP(90),
+  },
+  grouper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: heightPercentageToDP(1.5),
+  },
+  title: {
+    fontSize: fontSizeToDp(3.1),
+    fontFamily: "Mulish_700Bold",
+  },
+  checkbox: {
+    marginRight: 6,
+    height: 18,
+    width: 18,
   },
 });

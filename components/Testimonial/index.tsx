@@ -1,11 +1,12 @@
 import { AntDesign, Entypo, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../utils/Responsive";
 import RoundAvatar from "../Avatar";
 import Button from "../Buttons";
@@ -233,7 +234,7 @@ const Testimonial = () => {
           title="Retour"
         />
 
-        <Button style={styles.button} title="Contacter" />
+        <Button onPress={()=>router.push('/search/payment')} style={styles.button} title="Contacter" />
       </View>
     </View>
   );

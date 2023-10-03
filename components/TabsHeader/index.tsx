@@ -59,14 +59,18 @@ const styles = StyleSheet.create({
     paddingTop: heightPercentageToDP(7),
     paddingBottom:heightPercentageToDP(1),
     paddingHorizontal: widthPercentageToDP(5),
-    width:'100%'
+    
+
   },
   title: {
     fontSize: fontSizeToDp(4),
     fontFamily: "Mulish_700Bold",
     textAlign: "center",
+    flex:1
   },
   headerLogo: {
     height: heightPercentageToDP(3.2),
+    flex:1
+
   },
 });

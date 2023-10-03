@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth:StyleSheet.hairlineWidth,
-    borderColor:THEME.COLORS.border,
+    borderColor:THEME.COLORS.lightBackground,
     borderRadius:6,
     marginTop:heightPercentageToDP(1),
 

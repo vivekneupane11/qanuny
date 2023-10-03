@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: widthPercentageToDP(2),
     borderRadius: 8,
     marginVertical:heightPercentageToDP(1),
-    borderColor:THEME.COLORS.border,
+    borderColor:THEME.COLORS.lightBackground,
     borderWidth:StyleSheet.hairlineWidth
   },
   buttonText: {

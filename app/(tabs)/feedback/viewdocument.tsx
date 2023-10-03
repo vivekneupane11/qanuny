@@ -9,9 +9,9 @@ import SearchBar from "../../../components/SearchInput";
 import SectionHeader from "../../../components/SectionHeader";
 import { THEME } from "../../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../../utils/Responsive";
 
 const data = [
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
+    paddingTop:heightPercentageToDP(6)
   },
   content: {
     paddingTop: heightPercentageToDP(1),

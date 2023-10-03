@@ -1,13 +1,14 @@
 import { Entypo, FontAwesome } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
+import { router } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import { fontSizeToDp, heightPercentageToDP } from "../../utils/Responsive";
 
 export default function DocumentSection({ action }: { action?: boolean }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={()=>router.push('/feedback/individualdocument')} style={styles.container}>
       <View style={styles.leftContent}>
         <Checkbox style={styles.checkbox} />
         <Entypo name="news" size={18} color={THEME.COLORS.iconColor} />
@@ -35,7 +36,7 @@ export default function DocumentSection({ action }: { action?: boolean }) {
          <Text style={styles.rightText}>Seen</Text>
        </View>
       )}
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

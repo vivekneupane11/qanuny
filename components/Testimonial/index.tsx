@@ -242,11 +242,13 @@ const Testimonial = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    paddingVertical: heightPercentageToDP(3),
+    paddingHorizontal:widthPercentageToDP(5),    backgroundColor:'yellow'
   },
   pricingContainer: {
     alignItems: "center",
     justifyContent: "space-between",
+    borderWidth:1
   },
   iconTextContainer: {
     flexDirection: "row",

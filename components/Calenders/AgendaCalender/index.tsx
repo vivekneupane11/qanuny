@@ -361,6 +361,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: widthPercentageToDP(2),
     paddingVertical: heightPercentageToDP(1.5),
     marginLeft: 2,
+    alignItems:'center'
   },
 
   customDay: {

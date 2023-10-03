@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   },
   chip: {
     flexDirection: "row",
+    alignItems:'center',
     paddingVertical: 8,
     paddingHorizontal: 12,
     backgroundColor: THEME.COLORS.lightGrayBackground,

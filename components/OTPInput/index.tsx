@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { widthPercentageToDP } from '../../utils/Responsive';
@@ -10,9 +10,11 @@ interface OTPInputProps {
 
 const OTPInput: React.FC<OTPInputProps> = ({ length = 6, onOTPChange }) => {
   const [otp, setOTP] = useState<string>('');
+  const inputRefs = useRef<TextInput[]>([]);
 
   const handleInputChange = (text: string, index: number) => {
     if (text.length === 1 && index < length - 1) {
+      inputRefs.current[index + 1].focus();
     }
 
     const newOTP = [...otp];
@@ -26,6 +28,7 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 6, onOTPChange }) => {
 
   const handleBackspace = (index: number) => {
     if (index > 0) {
+      inputRefs.current[index - 1].focus();
     }
 
     const newOTP = [...otp];
@@ -35,6 +38,7 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 6, onOTPChange }) => {
 
   useEffect(() => {
 
+    inputRefs.current[0].focus();
   }, []);
 
   return (
@@ -47,6 +51,7 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 6, onOTPChange }) => {
             <TextInput
               key={index.toString()}
               style={styles.input}
+              ref={(ref) => (inputRefs.current[index] = ref as TextInput)}
               onChangeText={(text) => handleInputChange(text, index)}
               onKeyPress={({ nativeEvent }) => {
                 if (nativeEvent.key === 'Backspace') {

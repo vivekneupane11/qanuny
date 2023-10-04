@@ -20,7 +20,7 @@ const styles= StyleSheet.create({
 container:{
     backgroundColor:THEME.COLORS.lightGrayBackground,
     paddingHorizontal:widthPercentageToDP(2),
-    paddingVertical:heightPercentageToDP(1.4),
+    paddingVertical:heightPercentageToDP(1.2),
     borderRadius:50,
     flexDirection:'row',
     justifyContent:'space-between',

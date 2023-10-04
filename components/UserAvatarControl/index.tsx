@@ -12,12 +12,12 @@ import RoundAvatar from "../Avatar";
 import Chip from "../Chip";
 import MessageChip from "../MessageChip";
 
-export default function UserAvatarControl({ message ,chipText,badge,to }: { message?: boolean,badge?: boolean,chipText?:string,to?:string }) {
+export default function UserAvatarControl({ message ,chipText,badge,to,highlight,messageText }: { message?: boolean,badge?: boolean,chipText?:string,to?:string,highlight?:boolean,messageText?:string }) {
   console.log("🚀 ~ file: index.tsx:16 ~ UserAvatarControl ~ to:", to)
   const router= useRouter()
   
   return (
-    <TouchableOpacity onPress={()=>router.push(`${to?to:'/chat'}`)} style={styles.container}>
+    <TouchableOpacity onPress={()=>router.push(`${to?to:'/chat'}`)} style={[styles.container,highlight && styles.highlight]}>
       <View style={styles.leftSection}>
         <RoundAvatar
           source={{
@@ -26,15 +26,19 @@ export default function UserAvatarControl({ message ,chipText,badge,to }: { mess
           size={55}
         />
         <View style={styles.userInfo}>
-          <Text style={styles.userName}>Micheal Jordan</Text>
-          <View style={styles.userActiveInfo}>
-            <SimpleLineIcons name="clock" size={12} color="black" />
-            <Text style={styles.time}>10:30 pm</Text>
-          </View>
+          <Text style={[styles.userName,highlight && styles.highlightText]}>Micheal Jordan</Text>
+        {
+          messageText ? <View style={styles.userActiveInfo}>
+          <Text style={styles.time}>{messageText}</Text>
+        </View> :  <View style={styles.userActiveInfo}>
+          <SimpleLineIcons name="clock" size={12} color={THEME.COLORS.secondaryDarkTextColor} />
+          <Text style={styles.time}>10:30 am</Text>
+        </View>
+        }
         </View>
       </View>
       <View style={styles.rightSection}>
-        {message ? <MessageChip badge={badge} chipText={chipText} /> : <Chip />}
+        {message ? <MessageChip  badge={badge} chipText={chipText} /> : <Chip />}
       </View>
     </TouchableOpacity>
   );
@@ -46,6 +50,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal:widthPercentageToDP(3)
+
   },
   leftSection: {
     flexDirection: "row",
@@ -62,9 +68,9 @@ const styles = StyleSheet.create({
   },
   time: {
     paddingHorizontal: 4,
-    fontFamily: "Mulish_400Regular",
+    fontFamily: "Mulish_500Medium",
     fontSize: fontSizeToDp(3.1),
-    color: THEME.COLORS.secondaryDarkTextColor,
+    color: THEME.COLORS.secondaryLightTextColor,
   },
   userActiveInfo: {
     flexDirection: "row",
@@ -72,4 +78,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: heightPercentageToDP(0.6),
   },
+  highlight:{
+    backgroundColor:THEME.COLORS.primary,
+    borderRadius:9
+  },
+  highlightText:{
+    color:'#fff'
+  }
 });

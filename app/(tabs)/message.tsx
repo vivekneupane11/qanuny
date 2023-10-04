@@ -14,7 +14,7 @@ const data = [
   0, 1, 2, 3, 45, 6, 7, 8, 9, 9, 1111, 2, 3, 4, 5, 6, 7, 89, 4, 3, 2, 5, 4, 345,
   345, 345,
 ];
-const renderItem = () => <UserAvatarControl chipText="1 min ago" message={true} badge={true} />;
+const renderItem = () => <UserAvatarControl chipText="1 min ago" message={true} badge={true} messageText="Hello friend"  />;
 const Message = () => {
   const router = useRouter();
   const url = Linking.useURL();
@@ -32,6 +32,7 @@ const Message = () => {
             <>
               <SearchBar transparent={false}/>
               <SectionHeader leftTitle="Chat List" rightTitle="Clear All" />
+              <UserAvatarControl chipText="Now" message={true} badge={true} highlight={true} messageText="Hello friend" />
             </>
           )}
         />

@@ -1,8 +1,8 @@
 import * as Linking from "expo-linking";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 
 import { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Button from "../components/Buttons";
 import GoogleButton from "../components/GoogleButton";
 import CustomHeader from "../components/Header";
@@ -68,11 +68,12 @@ const RegisterPage = () => {
           <GoogleButton title="Sign In With Google" onPress={() => {}} />
 
           <View style={styles.groupBottom}>
-            <Text style={styles.textLeft}>Don't have an account?</Text>
-            <Link href={"/"} asChild>
-              <Text style={styles.textRight}>Sign In</Text>
-            </Link>
-          </View>
+          <Text style={styles.textLeft}>Don't have an account?</Text>
+          <TouchableOpacity onPress={()=>router.push('/register')} >
+          <Text style={styles.textRight}>Sign up</Text>
+            <Image style={styles.underlineImage} source={require('../assets/Onboard/underline-signin.png')} />
+          </TouchableOpacity>
+        </View>
         </View>
       </ScrollView>
     </View>
@@ -155,4 +156,8 @@ const styles = StyleSheet.create({
     fontSize: fontSizeToDp(3.3),
     paddingLeft: 6,
   },
+  underlineImage:{
+    marginTop:4,
+    marginLeft:10
+  }
 });

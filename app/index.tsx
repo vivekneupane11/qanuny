@@ -3,7 +3,7 @@ import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
 
 import { useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Button from "../components/Buttons";
 import GoogleButton from "../components/GoogleButton";
 import CustomHeader from "../components/Header";
@@ -76,9 +76,10 @@ const LoginPage = () => {
 
         <View style={styles.groupBottom}>
           <Text style={styles.textLeft}>Don't have an account?</Text>
-          <Link href={"/register"} asChild>
-            <Text style={styles.textRight}>Sign up</Text>
-          </Link>
+          <TouchableOpacity onPress={()=>router.push('/register')} >
+          <Text style={styles.textRight}>Sign up</Text>
+            <Image style={styles.underlineImage} source={require('../assets/Onboard/underline-signin.png')} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -148,6 +149,7 @@ const styles = StyleSheet.create({
     marginTop: heightPercentageToDP(3),
     flexDirection: "row",
     justifyContent: "center",
+    alignItems:"flex-start"
   },
   textLeft: {
     fontFamily: "Mulish_400Regular",
@@ -159,4 +161,8 @@ const styles = StyleSheet.create({
     fontSize: fontSizeToDp(3.3),
     paddingLeft: 6,
   },
+  underlineImage:{
+    marginTop:4,
+    marginLeft:10
+  }
 });

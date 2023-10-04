@@ -1,16 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { Stack, useRouter } from "expo-router";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import Button from "../../../components/Buttons";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
 import TransparentTextInput from "../../../components/Profile/TransparentInput";
 import SectionHeader from "../../../components/SectionHeader";
 import { THEME } from "../../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../../utils/Responsive";
 
 const PaymentSummary = () => {
@@ -71,7 +70,9 @@ const PaymentSummary = () => {
             <TransparentTextInput placeholder="Smith" />
           </View>
         </View>
-        <Button title="Suivant" />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Suivant</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
@@ -122,5 +123,18 @@ const styles = StyleSheet.create({
     fontFamily:'Mulish_700Bold',
     fontSize:fontSizeToDp(3.4)
 
+  },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
   }
 });

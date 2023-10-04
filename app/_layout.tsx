@@ -8,6 +8,11 @@ import {
   useFonts,
 } from "@expo-google-fonts/mulish";
 import { Stack, useRouter } from "expo-router";
+import * as SplashScreen from 'expo-splash-screen';
+
+import { useCallback } from "react";
+SplashScreen.preventAutoHideAsync();
+
 const StackLayout = () => {
   const router = useRouter();
   let [fontsLoaded, fontError] = useFonts({
@@ -18,6 +23,14 @@ const StackLayout = () => {
     Mulish_700Bold,
     Mulish_900Black,
   });
+
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded ) {
+   
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
   if (!fontsLoaded && !fontError) {
     return null;

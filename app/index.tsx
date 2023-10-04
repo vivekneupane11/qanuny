@@ -4,7 +4,6 @@ import { Link, useRouter } from "expo-router";
 
 import { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Button from "../components/Buttons";
 import GoogleButton from "../components/GoogleButton";
 import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
@@ -70,7 +69,9 @@ const LoginPage = () => {
           </View>
         </View>
        <Link href={'/(tabs)/home'} asChild>
-       <Button title="Sign In" onPress={() => {}} />
+       <TouchableOpacity style={styles.button} onPress={() => {}} >
+        <Text style={styles.buttonText}>Sign In</Text>
+       </TouchableOpacity>
        </Link>
         <GoogleButton title="Sign In With Google" onPress={() => {}} />
 
@@ -164,5 +165,18 @@ const styles = StyleSheet.create({
   underlineImage:{
     marginTop:4,
     marginLeft:10
+  },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
   }
 });

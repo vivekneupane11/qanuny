@@ -2,7 +2,6 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Button from "../components/Buttons";
 import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
 import { THEME } from "../constants/Theme";
@@ -71,7 +70,9 @@ const ForgetPassword = () => {
         </View>
 
         <Link href="/newpassword" asChild>
-        <Button title="Sent Code" onPress={() => {}} />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Sent Code</Text>
+        </TouchableOpacity>
         </Link>
 
         <View style={styles.groupBottom}>
@@ -178,4 +179,17 @@ const styles = StyleSheet.create({
   chipGray: {
     backgroundColor: THEME.COLORS.secondaryLightTextColor,
   },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
+  }
 });

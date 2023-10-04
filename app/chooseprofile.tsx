@@ -1,13 +1,12 @@
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import Button from "../components/Buttons";
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import CustomHeader from "../components/Header";
 import { THEME } from "../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../utils/Responsive";
 
 const ChooseProfile = () => {
@@ -51,7 +50,9 @@ const ChooseProfile = () => {
 
           <View style={styles.buttonAction}>
             <Link href="/(tabs)/home" asChild>
-              <Button title="Confirm" onPress={() => {}} />
+              <TouchableOpacity style={styles.button} onPress={() => {}} >
+<Text style={styles.buttonText}>Confirm</Text>
+                </TouchableOpacity>
             </Link>
           </View>
         </View>
@@ -125,4 +126,17 @@ const styles = StyleSheet.create({
     paddingVertical:heightPercentageToDP(1)
     
   },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
+  }
 });

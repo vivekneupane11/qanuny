@@ -1,5 +1,4 @@
 import { Stack, useRouter } from "expo-router";
-import { Button } from "react-native";
 
 const StackLayout = () => {
   const router = useRouter();
@@ -21,9 +20,7 @@ const StackLayout = () => {
         options={{
           presentation: "modal",
           headerTitle: "Create account",
-          headerLeft: () => (
-            <Button title="Close" onPress={() => router.back()} />
-          ),
+         
         }}
       />
     </Stack>

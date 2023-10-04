@@ -1,14 +1,13 @@
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../../constants/Theme";
 import {
   fontSizeToDp,
   heightPercentageToDP,
   widthPercentageToDP,
 } from "../../../utils/Responsive";
-import Button from "../../Buttons";
 import TransparentTextInput from "../TransparentInput";
 
 export default function FormActions() {
@@ -60,7 +59,9 @@ export default function FormActions() {
         <TransparentTextInput placeholder="Smith" />
       </View>
      <Link href="/(tabs)/feedback" asChild>
-     <Button title="Submit It"/>
+     <TouchableOpacity style={styles.button}>
+      <Text style={styles.buttonText}>Submit It</Text>
+     </TouchableOpacity>
      </Link>
     </View>
   );
@@ -102,4 +103,17 @@ const styles = StyleSheet.create({
     fontFamily: "Mulish_500Medium",
     color: THEME.COLORS.primary,
   },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
+  }
 });

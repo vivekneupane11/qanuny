@@ -1,7 +1,6 @@
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import Button from "../components/Buttons";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import CustomHeader from "../components/Header";
 import OTPInput from "../components/OTPInput";
 import { THEME } from "../constants/Theme";
@@ -45,7 +44,9 @@ const OTP = () => {
           </Link>
         </View>
         <Link href="/verify" asChild>
-        <Button title="Verify Now" onPress={() => {}} />
+        <TouchableOpacity style={styles.button} onPress={() => {}} >
+          <Text style={styles.buttonText}>Verify Now</Text>
+        </TouchableOpacity>
         </Link>
 
       
@@ -113,5 +114,17 @@ const styles = StyleSheet.create({
     textAlign: "left",
     paddingVertical: heightPercentageToDP(1.2),
   },
-
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
+  }
 });

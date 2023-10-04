@@ -1,14 +1,13 @@
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import Button from "../components/Buttons";
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
 import { THEME } from "../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../utils/Responsive";
 
 const NewPassword = () => {
@@ -51,7 +50,9 @@ const NewPassword = () => {
             />
           </View>
           <Link href="/otp" asChild>
-          <Button title="Enregistrer" onPress={() => {}} />
+          <TouchableOpacity onPress={() => {}} style={styles.button} >
+<Text style={styles.buttonText}>Enregistrer</Text>
+            </TouchableOpacity>
         </Link>
 
        
@@ -107,4 +108,17 @@ const styles = StyleSheet.create({
     paddingTop: heightPercentageToDP(3),
     paddingBottom: heightPercentageToDP(1),
   },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
+  }
 });

@@ -9,7 +9,6 @@ import {
   widthPercentageToDP,
 } from "../../utils/Responsive";
 import RoundAvatar from "../Avatar";
-import Button from "../Buttons";
 
 const Testimonial = () => {
   return (
@@ -229,12 +228,15 @@ const Testimonial = () => {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <Button
+        <TouchableOpacity
           style={[styles.button, styles.lightBackground]}
-          title="Retour"
-        />
+        >
+          <Text style={styles.buttonText}>Retour</Text>
+        </TouchableOpacity>
 
-        <Button onPress={()=>router.push('/search/payment')} style={styles.button} title="Contacter" />
+        <TouchableOpacity onPress={()=>router.push('/search/payment')} style={styles.button} >
+          <Text style={styles.buttonText}>Contacter</Text>
+          </TouchableOpacity>
       </View>
     </View>
   );
@@ -371,6 +373,13 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-between',
     paddingVertical:16
+  },
+
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4)
   }
 });
 

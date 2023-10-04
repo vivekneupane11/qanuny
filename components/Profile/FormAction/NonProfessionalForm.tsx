@@ -1,13 +1,12 @@
 import { SimpleLineIcons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../../constants/Theme";
 import {
   fontSizeToDp,
   heightPercentageToDP,
   widthPercentageToDP,
 } from "../../../utils/Responsive";
-import Button from "../../Buttons";
 import TransparentTextInput from "../TransparentInput";
 
 export default function NonProfessionalForm() {
@@ -64,12 +63,15 @@ export default function NonProfessionalForm() {
       </View>
 
       <View style={styles.row}>
-        <Button
+        <TouchableOpacity
           style={[styles.button, styles.lightBackground]}
-          title="Cancel"
-        />
+        >
+<Text style={styles.buttonText}>Cancel</Text>
+        </TouchableOpacity>
 
-        <Button style={styles.button} title="Save" />
+        <TouchableOpacity style={styles.button}  >
+          <Text style={styles.buttonText}>Save</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -130,4 +132,11 @@ const styles = StyleSheet.create({
   lightBackground: {
     backgroundColor: THEME.COLORS.secondaryLightTextColor,
   },
+
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4)
+  }
 });

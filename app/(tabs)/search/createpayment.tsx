@@ -5,14 +5,14 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View
 } from "react-native";
-import Button from "../../../components/Buttons";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
 import TransparentTextInput from "../../../components/Profile/TransparentInput";
 import SectionHeader from "../../../components/SectionHeader";
 import { THEME } from "../../../constants/Theme";
-import { fontSizeToDp } from "../../../utils/Responsive";
+import { fontSizeToDp, heightPercentageToDP } from "../../../utils/Responsive";
 
 const CreatePayment = () => {
   const router = useRouter();
@@ -43,7 +43,9 @@ const CreatePayment = () => {
 <TransparentTextInput placeholder="Enter your name"/>
 <Text style={styles.label}>Amount </Text>
 <TransparentTextInput placeholder="Enter your amount"/>
-<Button onPress={()=>router.push('/search/paymentsummary')} title="Suivant" />
+<TouchableOpacity style={styles.button} onPress={()=>router.push('/search/paymentsummary')}  >
+  <Text style={styles.buttonText}>Suivant</Text>
+</TouchableOpacity>
       </ScrollView>
     </View>
   );
@@ -63,5 +65,18 @@ const styles = StyleSheet.create({
     color:THEME.COLORS.secondaryDarkTextColor,
     fontSize:fontSizeToDp(3.4),
     paddingTop:10
+  },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2.4),
+    marginTop:heightPercentageToDP(2),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
   }
 });

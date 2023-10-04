@@ -1,7 +1,7 @@
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import Button from "../components/Buttons";
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { THEME } from "../constants/Theme";
 import {
   fontSizeToDp,
   heightPercentageToDP,
@@ -34,7 +34,9 @@ const OTP = () => {
        
        <View style={styles.buttonAction}>
        <Link href="/chooseprofile" asChild    >
-        <Button title="Acceuil" onPress={() => {}} />
+        <TouchableOpacity style={styles.button} onPress={() => {}} >
+<Text style={styles.buttonText}>Acceuil</Text>
+        </TouchableOpacity>
         </Link>
        </View>
 
@@ -74,5 +76,18 @@ const styles = StyleSheet.create({
   buttonAction:{
     marginTop:heightPercentageToDP(20),
     width:widthPercentageToDP(90)
+  },
+  button:{
+    backgroundColor:THEME.COLORS.primary,
+    color:'#fff',
+    paddingVertical:heightPercentageToDP(2),
+    marginTop:heightPercentageToDP(1),
+    borderRadius:12
+  },
+  buttonText:{
+    color:'#fff',
+    textAlign:'center',
+    fontFamily:'Mulish_700Bold',
+    fontSize:fontSizeToDp(4.3)
   }
 });

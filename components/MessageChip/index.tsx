@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { THEME } from '../../constants/Theme';
-import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
+import { fontSizeToDp, widthPercentageToDP } from '../../utils/Responsive';
 
 export default function MessageChip({badge,chipText}:{badge?:boolean,chipText?:string}) {
   return (
@@ -20,8 +20,8 @@ const styles= StyleSheet.create({
 container:{
     backgroundColor:THEME.COLORS.lightGrayBackground,
     paddingHorizontal:widthPercentageToDP(2),
-    paddingVertical:heightPercentageToDP(1.2),
     borderRadius:50,
+    paddingVertical:8,
     flexDirection:'row',
     justifyContent:'space-between',
     alignItems:'center'
@@ -38,10 +38,10 @@ badge:{
     fontSize:fontSizeToDp(2.5),
     color:'#fff',
 aspectRatio:1,
-    width:widthPercentageToDP(6),
+    width:widthPercentageToDP(5),
     justifyContent:'center',
     alignItems:'center',
     textAlign:'center',
-    paddingTop:3
+    paddingTop:2
 }
 })

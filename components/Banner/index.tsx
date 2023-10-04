@@ -35,7 +35,7 @@ export default function Banner() {
         <View style={styles.borderRight}>
           <View style={[styles.bannerGroup]}>
             <View style={styles.iconContainer}>
-              <Feather name="video" size={14} color="#000" />
+              <Feather name="video" size={18} color="#000" />
             </View>
             <Text style={styles.greetName}>05</Text>
           </View>
@@ -46,7 +46,7 @@ export default function Banner() {
           <View style={[styles.bannerGroup]}>
             <View style={styles.iconContainer}>
              
-              <Ionicons name="hammer-outline" size={14} color="#000" />
+              <Ionicons name="hammer-outline" size={18} color="#000" />
             </View>
             <Text style={styles.greetName}>375</Text>
           </View>

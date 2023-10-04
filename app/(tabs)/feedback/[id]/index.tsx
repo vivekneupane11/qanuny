@@ -4,7 +4,7 @@ import { Stack, useRouter } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import HeaderWithIcon from "../../../../components/HeaderWithIcon";
 import SearchBar from "../../../../components/SearchInput";
-import SectionHeader from "../../../../components/SectionHeader";
+import SectionHeaderWithButton from "../../../../components/SectionHeader/SectionHeaderWithButton";
 import TransactionClient from "../../../../components/TransactionClient";
 import { THEME } from "../../../../constants/Theme";
 import {
@@ -47,7 +47,7 @@ const FeedDetail = () => {
           <Text style={styles.smallText}>
             Note: You can created invoice on the web
           </Text>
-          <SearchBar transparent={false} />
+          <SearchBar transparent={true} />
           <View style={styles.chipContainer}>
            <Chip title="Seen" highlight={true} />
          
@@ -55,7 +55,7 @@ const FeedDetail = () => {
            <Chip title="UnPaid" highlight={false} />
            <Chip title="Cancelled" highlight={false} />
           </View>
-          <SectionHeader leftTitle="All" rightTitle="See All" />
+          <SectionHeaderWithButton leftTitle="All" rightTitle="Last 30 days" icon={true} />
           <TransactionClient />
           <TransactionClient />
           <TransactionClient />

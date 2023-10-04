@@ -47,7 +47,7 @@ const ViewDocument = () => {
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={() => (
             <>
-              <SearchBar transparent={false} />
+              <SearchBar transparent={true} />
            
         
              <View style={{paddingTop:heightPercentageToDP(0.4)}}>

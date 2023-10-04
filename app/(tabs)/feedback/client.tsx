@@ -16,7 +16,14 @@ const data = [
   0, 1, 2, 3, 45, 6, 7, 8, 9, 9, 1111, 2, 3, 4, 5, 6, 7, 89, 4, 3, 2, 5, 4, 345,
   345, 345,
 ];
-const renderItem = () => <UserAvatarControl chipText="See Files" message={true} badge={false} to="feedback/feedbackclient"  />;
+const renderItem = () => (
+  <UserAvatarControl
+    chipText="See Files"
+    message={true}
+    badge={false}
+    to="feedback/feedbackclient"
+  />
+);
 const Feed = () => {
   const router = useRouter();
   const url = Linking.useURL();
@@ -47,6 +54,14 @@ const Feed = () => {
               <SearchBar transparent={false} />
 
               <SectionHeader leftTitle="Client list" rightTitle="See All" />
+              <UserAvatarControl
+                chipText="See Files"
+                message={true}
+                badge={false}
+                to="feedback/feedbackclient"
+                highlight={true}
+                isNew={true}
+              />
             </>
           )}
         />

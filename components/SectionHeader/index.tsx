@@ -15,7 +15,9 @@ export default function SectionHeader({leftTitle,rightTitle,icon}:SectionHeaderP
         <View style={styles.row}>
 
         <Text style={styles.textLeft}>{leftTitle}</Text>
-        <MaterialIcons name="keyboard-arrow-down" size={28} color={THEME.COLORS.secondaryDarkTextColor}/>
+        {
+            icon && <MaterialIcons name="keyboard-arrow-down" size={28} color={THEME.COLORS.secondaryDarkTextColor}/>
+        }
         </View>
 <Text style={styles.textRight}>{rightTitle}</Text>
 

@@ -30,7 +30,7 @@ const Feed = () => {
         <View style={styles.content}>
           <Text style={styles.largeText}>Factures et devis</Text>
           <Text style={styles.smallText}>Note: You can created invoice on the web</Text>
-          <SearchBar transparent={false} />
+          <SearchBar transparent={true} />
           <Banner />
          
           <SectionHeader leftTitle="Recent Transaction" rightTitle="See All" />

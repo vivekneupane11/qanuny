@@ -11,8 +11,10 @@ import {
 import RoundAvatar from "../Avatar";
 import Chip from "../Chip";
 import MessageChip from "../MessageChip";
+import NewChip from "../MessageChip/NewChip";
 
-export default function UserAvatarControl({ message ,chipText,badge,to,highlight,messageText }: { message?: boolean,badge?: boolean,chipText?:string,to?:string,highlight?:boolean,messageText?:string }) {
+type UserAvatarProps = { message?: boolean,badge?: boolean,chipText?:string,to?:string,highlight?:boolean,messageText?:string ,isNew?:boolean}
+export default function UserAvatarControl({ message ,chipText,badge,to,highlight,messageText,isNew }: UserAvatarProps) {
   console.log("🚀 ~ file: index.tsx:16 ~ UserAvatarControl ~ to:", to)
   const router= useRouter()
   
@@ -26,7 +28,10 @@ export default function UserAvatarControl({ message ,chipText,badge,to,highlight
           size={55}
         />
         <View style={styles.userInfo}>
-          <Text style={[styles.userName,highlight && styles.highlightText]}>Micheal Jordan</Text>
+         <View style={styles.row}>
+         <Text style={[styles.userName,highlight && styles.highlightText]}>Micheal Jordan</Text>
+         {isNew && <NewChip chipText="new" />}
+         </View>
         {
           messageText ? <View style={styles.userActiveInfo}>
           <Text style={styles.time}>{messageText}</Text>
@@ -84,5 +89,8 @@ const styles = StyleSheet.create({
   },
   highlightText:{
     color:'#fff'
+  },
+  row:{
+    flexDirection:'row'
   }
 });

@@ -6,7 +6,7 @@ import DocumentSection from "../../../components/DocumentSection";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
 import SearchBar from "../../../components/SearchInput";
 import SectionHeader from "../../../components/SectionHeader";
-import UserAvatarControl from "../../../components/UserAvatarControl";
+import UserAvatarWithButton from "../../../components/UserAvatarControl/UserAvatarWithButton";
 import { THEME } from "../../../constants/Theme";
 import {
   heightPercentageToDP,
@@ -25,7 +25,7 @@ const FeedbackDocument = () => {
   const handleLogin = () => {
     router.push("(tabs)/home");
   };
-  const renderItem = () => <DocumentSection action={true} />
+  const renderItem = () => <DocumentSection action={true} />;
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
@@ -38,7 +38,6 @@ const FeedbackDocument = () => {
       </HeaderWithIcon>
 
       <View style={styles.content}>
-        
         <FlatList
           contentContainerStyle={{ paddingBottom: heightPercentageToDP(12) }}
           data={data}
@@ -46,15 +45,22 @@ const FeedbackDocument = () => {
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={() => (
             <>
-              <SearchBar transparent={false} />
-            
+              <SearchBar transparent={true} />
 
-        
-             <View style={{paddingTop:heightPercentageToDP(1.5)}}>
-             <UserAvatarControl chipText="See Files" message={true} badge={false} to="/feedback/viewdocument"  />
-             </View>
-              <SectionHeader leftTitle="All Documents" rightTitle="See All" />
-
+              <View style={{ paddingTop: heightPercentageToDP(1.5) }}>
+                <UserAvatarWithButton
+                  messageText="UserID: Qa01"
+                  message={true}
+                  to="/feedback/viewdocument"
+                  highlight={true}
+                  isNew={true}
+                />
+              </View>
+              <SectionHeader
+                leftTitle="All Documents"
+                rightTitle="See All"
+                icon={true}
+              />
             </>
           )}
         />

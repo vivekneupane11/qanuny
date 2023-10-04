@@ -1,8 +1,8 @@
-import { AntDesign, Ionicons, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign, Entypo, Ionicons, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { useRouter } from "expo-router";
 import { ScrollView, StyleSheet, View } from "react-native";
-import CustomHeader from "../../../components/Header";
+import HeaderWithIcon from "../../../components/HeaderWithIcon";
 import SearchBar from "../../../components/SearchInput";
 import SettingList from "../../../components/SettingsList";
 import { THEME } from "../../../constants/Theme";
@@ -20,7 +20,9 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="Réglages" />
+      <HeaderWithIcon title="Réglages">
+      <Entypo name="dots-three-vertical" size={18} color="black" />
+      </HeaderWithIcon>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.content}>
           <SearchBar transparent={true} />

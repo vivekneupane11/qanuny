@@ -1,16 +1,22 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { THEME } from '../../constants/Theme'
-import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive'
+import { MaterialIcons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { THEME } from '../../constants/Theme';
+import { fontSizeToDp, heightPercentageToDP, widthPercentageToDP } from '../../utils/Responsive';
 
 interface SectionHeaderProps {
     leftTitle:string,
-    rightTitle:string
+    rightTitle:string,
+    icon?:boolean
 }
-export default function SectionHeader({leftTitle,rightTitle}:SectionHeaderProps) {
+export default function SectionHeader({leftTitle,rightTitle,icon}:SectionHeaderProps) {
   return (
     <View style={styles.container}>
-<Text style={styles.textLeft}>{leftTitle}</Text>
+        <View style={styles.row}>
+
+        <Text style={styles.textLeft}>{leftTitle}</Text>
+        <MaterialIcons name="keyboard-arrow-down" size={28} color={THEME.COLORS.secondaryDarkTextColor}/>
+        </View>
 <Text style={styles.textRight}>{rightTitle}</Text>
 
     </View>
@@ -33,5 +39,9 @@ const styles = StyleSheet.create({
 fontFamily:'Mulish_400Regular',
 fontSize:fontSizeToDp(3.1),
 color:THEME.COLORS.secondaryDarkTextColor
+    },
+    row:{
+        flexDirection:'row',
+        alignItems:'center'
     }
 })

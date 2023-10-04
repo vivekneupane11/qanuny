@@ -3,10 +3,10 @@ import Checkbox from "expo-checkbox";
 import * as Linking from "expo-linking";
 import { Stack, useRouter } from "expo-router";
 import {
-    ScrollView,
-    StyleSheet,
-    Text,
-    View
+  ScrollView,
+  StyleSheet,
+  Text,
+  View
 } from "react-native";
 import LawyerSection from "../../../components/DocumentSection/LawyerSection";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
@@ -15,8 +15,8 @@ import SearchBar from "../../../components/SearchInput";
 import SectionHeader from "../../../components/SectionHeader";
 import { THEME } from "../../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP
+  fontSizeToDp,
+  heightPercentageToDP
 } from "../../../utils/Responsive";
 
 const PaymentScreen = () => {
@@ -41,7 +41,7 @@ const PaymentScreen = () => {
         <SectionHeader leftTitle="Payment Complete" rightTitle="See all"/>
         <PaymentBanner/>
 
-        <SectionHeader leftTitle="My Invoice" rightTitle="See All" />
+        <SectionHeader leftTitle="My Invoice" rightTitle="See All" icon={true} />
         <View style={styles.grouper}>
             <View style={[styles.grouper, { paddingVertical: 0 }]}>
               <Checkbox style={styles.checkbox} />

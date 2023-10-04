@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     marginRight: 6,
+    marginTop:4,
     height: 18,
     width: 18,
   },
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   },
   leftText: {
     fontFamily: "Mulish_700Bold",
-    fontSize: fontSizeToDp(3.8),
+    fontSize: fontSizeToDp(3.3),
  },
   thin: {
     fontFamily: "Mulish_300Light",

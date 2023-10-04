@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal:widthPercentageToDP(3)
+    paddingHorizontal:widthPercentageToDP(1)
 
   },
   leftSection: {

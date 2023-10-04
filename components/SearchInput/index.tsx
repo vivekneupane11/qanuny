@@ -1,8 +1,9 @@
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import { THEME } from "../../constants/Theme";
 import { widthPercentageToDP } from "../../utils/Responsive";
+
 interface SearchBarProps {
   transparent: boolean;
 }
@@ -22,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ transparent }) => {
         placeholderTextColor="gray"
       />
       <TouchableOpacity>
-        <FontAwesome5 size={22} name="filter" style={styles.filterIcon} />
+      <MaterialCommunityIcons name="tune-variant" size={22} style={styles.filterIcon}/>
       </TouchableOpacity>
     </View>
   );
@@ -45,14 +46,14 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     padding: 10,
-    fontSize: 13,
+    fontSize: 14,
     color: "black",
     fontFamily: "Mulish_500Medium",
     borderRightWidth: StyleSheet.hairlineWidth,
     borderRightColor: THEME.COLORS.secondaryLightTextColor,
   },
   filterIcon: {
-    color: "gray",
+    color: THEME.COLORS.primaryTextColor,
     paddingHorizontal: widthPercentageToDP(3),
   },
   transparent: {

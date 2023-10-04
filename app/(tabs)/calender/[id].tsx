@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import MySchedule from "../../../components/Calenders/CustomDailyCalender";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
-import SectionHeader from "../../../components/SectionHeader";
+import SectionHeaderCalender from "../../../components/SectionHeader/SectionHeaderCalender";
 import { THEME } from "../../../constants/Theme";
 import { fontSizeToDp, widthPercentageToDP } from "../../../utils/Responsive";
 
@@ -30,7 +30,7 @@ const CalenderDetailPage = () => {
       </HeaderWithIcon>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={{ paddingHorizontal: widthPercentageToDP(5) }}>
-          <SectionHeader leftTitle="Your Schedule" rightTitle="See All" />
+          <SectionHeaderCalender leftTitle="Your Schedule" rightTitle="Monthly" />
         </View>
 
         <View style={styles.content}>

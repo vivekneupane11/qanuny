@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import CalenderWithMultiDot from "../../../components/Calenders/CalenderWithMultiDot";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
-import SectionHeader from "../../../components/SectionHeader";
+import SectionHeaderCalender from "../../../components/SectionHeader/SectionHeaderCalender";
 import { THEME } from "../../../constants/Theme";
 import { widthPercentageToDP } from "../../../utils/Responsive";
 
@@ -29,10 +29,11 @@ const CalenderDetailPage = () => {
         </View>
       </HeaderWithIcon>
       <View style={{ paddingHorizontal: widthPercentageToDP(5) }}>
-        <SectionHeader leftTitle="Your Schedule" rightTitle="See All" />
+        <SectionHeaderCalender leftTitle="Your Schedule" rightTitle="Monthly" />
       </View>
 
       <View style={styles.content}>
+        
         <CalenderWithMultiDot />
       </View>
     </View>

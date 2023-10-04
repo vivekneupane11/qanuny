@@ -2,7 +2,7 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { StyleSheet, View } from "react-native";
 import AgendaCalender from "../../../components/Calenders/AgendaCalender";
 import HeaderWithIcon from "../../../components/HeaderWithIcon";
-import SectionHeader from "../../../components/SectionHeader";
+import SectionHeaderCalender from "../../../components/SectionHeader/SectionHeaderCalender";
 import { THEME } from "../../../constants/Theme";
 import { widthPercentageToDP } from "../../../utils/Responsive";
 
@@ -25,7 +25,7 @@ const CalenderPage = () => {
         </View>
       </HeaderWithIcon>
       <View style={styles.content}>
-        <SectionHeader leftTitle="Your Schedule" rightTitle="See All" />
+        <SectionHeaderCalender leftTitle="Your Schedule" rightTitle="Daily" />
         <AgendaCalender />
       </View>
     </View>

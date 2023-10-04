@@ -120,9 +120,12 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     backgroundColor: "#fff",
-    padding: 8,
+    width:widthPercentageToDP(8),
+    aspectRatio:1,
     borderRadius: 999,
     marginRight: 6,
+    justifyContent:'center',
+    alignItems:'center'
   },
   label: {
     color: "#fff",

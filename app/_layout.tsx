@@ -37,7 +37,7 @@ export default function App() {
   return (
     <View
       onLayout={onLayoutRootView}
-      style={{ flex: 1, backgroundColor: "yellow" }}
+      style={{ flex: 1 }}
     >
       <Stack
         screenOptions={{

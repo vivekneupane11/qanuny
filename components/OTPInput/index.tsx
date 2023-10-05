@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { widthPercentageToDP } from '../../utils/Responsive';
 
 interface OTPInputProps {

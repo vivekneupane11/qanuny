@@ -42,6 +42,6 @@ aspectRatio:1,
     justifyContent:'center',
     alignItems:'center',
     textAlign:'center',
-    paddingTop:2
+    paddingTop:2,
 }
 })

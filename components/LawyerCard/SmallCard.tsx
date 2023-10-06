@@ -57,7 +57,7 @@ borderColor:THEME.COLORS.secondaryLightTextColor,
     image: {
       width: '100%',
       aspectRatio:3/2.2,
-      resizeMode: 'contain',
+      resizeMode: 'cover',
       borderRadius: 8,
       borderBottomLeftRadius:0,
       borderBottomRightRadius:0,

@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   gradient: {
     height: heightPercentageToDP(27),
     width: widthPercentageToDP(100),
+    overflow:'visible'
   },
   profileHeader: {
     width: widthPercentageToDP(100),

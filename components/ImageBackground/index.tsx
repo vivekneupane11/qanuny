@@ -1,7 +1,6 @@
 import { Entypo, FontAwesome5, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import HeaderWithIcon from "../../components/HeaderWithIcon";
 import {
   fontSizeToDp,
   heightPercentageToDP,
@@ -11,6 +10,7 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import RoundAvatar from "../../components/Avatar";
 import { THEME } from "../../constants/Theme";
+import ImageBackgroundHeader from "../HeaderWithIcon/ImageBackgroundHeader";
 export default function ImageBackgroundHead() {
   return (
     <View>
@@ -20,9 +20,9 @@ export default function ImageBackgroundHead() {
         }}
         style={styles.header}
       >
-        <HeaderWithIcon title={"Lawyer Profile"} color="#fff">
+        <ImageBackgroundHeader title={"Lawyer Profile"} color="#fff">
           <Ionicons name="notifications" size={28} color={"#fff"} />
-        </HeaderWithIcon>
+        </ImageBackgroundHeader>
         <View style={styles.avatarFloat}>
           <RoundAvatar
             source={{

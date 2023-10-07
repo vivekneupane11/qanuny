@@ -3,9 +3,9 @@ import { useNavigation } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../utils/Responsive";
 
 const ImageBackgroundHeader = ({ title, logo,children,color }: { title?: string; logo?: boolean,children?:React.ReactNode,color?:string }) => {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop: heightPercentageToDP(3),
+    paddingTop: heightPercentageToDP(4.5),
     paddingBottom: heightPercentageToDP(2),
     paddingHorizontal: widthPercentageToDP(5),
   },

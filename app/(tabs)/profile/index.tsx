@@ -1,4 +1,10 @@
-import { AntDesign, Entypo, Ionicons, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Entypo,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { useRouter } from "expo-router";
 import { ScrollView, StyleSheet, View } from "react-native";
@@ -21,7 +27,7 @@ const Profile = () => {
   return (
     <View style={styles.container}>
       <HeaderWithIcon title="Réglages">
-      <Entypo name="dots-three-vertical" size={18} color="black" />
+        <Entypo name="dots-three-vertical" size={18} color="black" />
       </HeaderWithIcon>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.content}>
@@ -38,31 +44,49 @@ const Profile = () => {
               />
             </SettingList>
             <SettingList title="Invoice Settings" active={false}>
-            <Ionicons name="newspaper-outline" size={22} color={THEME.COLORS.iconColor} />
-              
+              <Ionicons
+                name="newspaper-outline"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
             <SettingList title="Payment Settings" active={false}>
-            <MaterialIcons name="payment" size={22} color={THEME.COLORS.iconColor} />
-            
+              <MaterialIcons
+                name="payment"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
             <SettingList title="Contrack History" active={false}>
-            <MaterialIcons name="payment" size={22} color={THEME.COLORS.iconColor} />
+              <MaterialIcons
+                name="payment"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
             <SettingList title="Appearance" active={false}>
-            <Ionicons name="sunny-outline" size={22} color={THEME.COLORS.iconColor} />
-              
+              <Ionicons
+                name="sunny-outline"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
             <SettingList title="Application" active={false}>
-            <MaterialCommunityIcons name="newspaper-check" size={22} color={THEME.COLORS.iconColor} />
-             
+              <MaterialCommunityIcons
+                name="newspaper-check"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
             <SettingList title="API" active={false}>
-            <AntDesign name="API" size={22} color={THEME.COLORS.iconColor} />
-             
+              <AntDesign name="API" size={22} color={THEME.COLORS.iconColor} />
             </SettingList>
             <SettingList title="Term Conditions" active={false}>
-            <Ionicons name="terminal-outline" size={22} color={THEME.COLORS.iconColor} />
-             
+              <Ionicons
+                name="terminal-outline"
+                size={22}
+                color={THEME.COLORS.iconColor}
+              />
             </SettingList>
           </View>
         </View>

@@ -1,6 +1,12 @@
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import CustomHeader from "../components/Header";
 import OTPInput from "../components/OTPInput";
 import { THEME } from "../constants/Theme";
@@ -11,7 +17,6 @@ import {
 } from "../utils/Responsive";
 
 const OTP = () => {
-
   const router = useRouter();
   const url = Linking.useURL();
 
@@ -22,36 +27,32 @@ const OTP = () => {
   return (
     <View style={styles.container}>
       <CustomHeader title="OTP Verify" />
-    <ScrollView contentContainerStyle={{flexGrow:1}}>
-    <View style={styles.content}>
-    
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={styles.content}>
+          <View style={styles.info}>
+            <Text style={styles.largeText}>Send OTP</Text>
+            <Text style={[styles.lightText, styles.lefter]}>
+              We have sent an 4 digit OTP to the mentioned email:
+              john*********@gmail.com
+            </Text>
+          </View>
 
-        <View style={styles.info}>
-          <Text style={styles.largeText}>Send OTP</Text>
-          <Text style={[styles.lightText, styles.lefter]}>
-          We have sent an 4 digit OTP to the mentioned email: john*********@gmail.com
-          </Text>
-      
-        </View>
-
-        <View style={styles.formGroup}>
-        <OTPInput length={4} onOTPChange={()=>{}}/>
-        </View>
-        <View style={styles.groupBottom}>
-          <Text style={styles.textLeft}>If don’t received the code? </Text>
-          <Link href={"/"} asChild>
-            <Text style={styles.textRight}>Resent </Text>
+          <View style={styles.formGroup}>
+            <OTPInput length={4} onOTPChange={() => {}} />
+          </View>
+          <View style={styles.groupBottom}>
+            <Text style={styles.textLeft}>If don’t received the code? </Text>
+            <Link href={"/"} asChild>
+              <Text style={styles.textRight}>Resent </Text>
+            </Link>
+          </View>
+          <Link href="/verify" asChild>
+            <TouchableOpacity style={styles.button} onPress={() => {}}>
+              <Text style={styles.buttonText}>Verify Now</Text>
+            </TouchableOpacity>
           </Link>
         </View>
-        <Link href="/verify" asChild>
-        <TouchableOpacity style={styles.button} onPress={() => {}} >
-          <Text style={styles.buttonText}>Verify Now</Text>
-        </TouchableOpacity>
-        </Link>
-
-      
-      </View>
-    </ScrollView>
+      </ScrollView>
     </View>
   );
 };
@@ -79,7 +80,6 @@ const styles = StyleSheet.create({
     color: THEME.COLORS.primaryTextColor,
     textAlign: "center",
   },
-
 
   right: {},
   forgotText: {
@@ -114,17 +114,17 @@ const styles = StyleSheet.create({
     textAlign: "left",
     paddingVertical: heightPercentageToDP(1.2),
   },
-  button:{
-    backgroundColor:THEME.COLORS.primary,
-    color:'#fff',
-    paddingVertical:heightPercentageToDP(2),
-    marginTop:heightPercentageToDP(1),
-    borderRadius:12
+  button: {
+    backgroundColor: THEME.COLORS.primary,
+    color: "#fff",
+    paddingVertical: heightPercentageToDP(2),
+    marginTop: heightPercentageToDP(1),
+    borderRadius: 12,
   },
-  buttonText:{
-    color:'#fff',
-    textAlign:'center',
-    fontFamily:'Mulish_700Bold',
-    fontSize:fontSizeToDp(4.3)
-  }
+  buttonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "Mulish_700Bold",
+    fontSize: fontSizeToDp(4.3),
+  },
 });

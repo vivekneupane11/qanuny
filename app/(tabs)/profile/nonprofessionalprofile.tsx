@@ -4,9 +4,9 @@ import NonProfessionalForm from "../../../components/Profile/FormAction/NonProfe
 import NonProfessionalGradient from "../../../components/Profile/GradientView/NonProfessionalGradient";
 import { THEME } from "../../../constants/Theme";
 import {
-    fontSizeToDp,
-    heightPercentageToDP,
-    widthPercentageToDP,
+  fontSizeToDp,
+  heightPercentageToDP,
+  widthPercentageToDP,
 } from "../../../utils/Responsive";
 
 const UserProfile = () => {
@@ -19,11 +19,11 @@ const UserProfile = () => {
       />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <NonProfessionalGradient />
+          <NonProfessionalGradient />
           <View style={styles.content}>
-          <TouchableOpacity onPress={()=>router.push('/profile/nonprofessionalprofile')}>
-
-            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push("/profile/nonprofessionalprofile")}
+            ></TouchableOpacity>
             <NonProfessionalForm />
           </View>
         </ScrollView>

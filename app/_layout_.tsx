@@ -20,7 +20,6 @@ const StackLayout = () => {
         options={{
           presentation: "modal",
           headerTitle: "Create account",
-         
         }}
       />
     </Stack>

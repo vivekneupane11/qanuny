@@ -12,8 +12,8 @@ import * as SplashScreen from "expo-splash-screen";
 import React, { useCallback } from "react";
 import { View } from "react-native";
 
-// Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
+
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
     Mulish_500Medium,
@@ -35,10 +35,7 @@ export default function App() {
   }
 
   return (
-    <View
-      onLayout={onLayoutRootView}
-      style={{ flex: 1 }}
-    >
+    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <Stack
         screenOptions={{
           headerStyle: {

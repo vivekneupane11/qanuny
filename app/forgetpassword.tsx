@@ -1,7 +1,14 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { Link, useRouter } from "expo-router";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
 import { THEME } from "../constants/Theme";
@@ -12,7 +19,6 @@ import {
 } from "../utils/Responsive";
 
 const ForgetPassword = () => {
-
   const router = useRouter();
   const url = Linking.useURL();
 
@@ -23,66 +29,73 @@ const ForgetPassword = () => {
   return (
     <View style={styles.container}>
       <CustomHeader title="Mot de passe oublié" />
-    <ScrollView contentContainerStyle={{flexGrow:1}}>
-    <View style={styles.content}>
-        <View style={styles.greetings}>
-          <Image
-            style={styles.images}
-            source={require("../assets/Onboard/recovery-password.png")}
-          />
-          <Text style={styles.boldText}>Recovery Password</Text>
-          <Text style={styles.lightText}>
-            Please Enter Your Email Address To Receive a Verification Code
-          </Text>
-        </View>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={styles.content}>
+          <View style={styles.greetings}>
+            <Image
+              style={styles.images}
+              source={require("../assets/Onboard/recovery-password.png")}
+            />
+            <Text style={styles.boldText}>Recovery Password</Text>
+            <Text style={styles.lightText}>
+              Please Enter Your Email Address To Receive a Verification Code
+            </Text>
+          </View>
 
-        <View style={styles.info}>
-          <Text style={styles.largeText}>Send OTP</Text>
-          <Text style={[styles.lightText, styles.lefter]}>
-            Select a method to receive the OTP
-          </Text>
-          <View style={styles.buttonActions}>
-            <TouchableOpacity style={styles.chipButton}>
-              <MaterialCommunityIcons
-                name="email-outline"
-                size={24}
-                color="#fff"
-              />
-              <Text style={styles.chipButtonText}>Email</Text>
+          <View style={styles.info}>
+            <Text style={styles.largeText}>Send OTP</Text>
+            <Text style={[styles.lightText, styles.lefter]}>
+              Select a method to receive the OTP
+            </Text>
+            <View style={styles.buttonActions}>
+              <TouchableOpacity style={styles.chipButton}>
+                <MaterialCommunityIcons
+                  name="email-outline"
+                  size={24}
+                  color="#fff"
+                />
+                <Text style={styles.chipButtonText}>Email</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => router.push("/otp")}
+                style={[styles.chipButton, styles.chipGray]}
+              >
+                <Ionicons
+                  name="phone-portrait-sharp"
+                  size={24}
+                  color="#666666"
+                />
+                <Text style={[styles.chipButtonText, styles.grayText]}>
+                  Phone
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.formGroup}>
+            <TextInputWithIcon
+              label="Email Address"
+              placeholder="Enter your email"
+              iconName="email"
+              secureEntry={false}
+            />
+          </View>
+
+          <Link href="/newpassword" asChild>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Sent Code</Text>
             </TouchableOpacity>
-            
-            <TouchableOpacity onPress={()=>router.push('/otp')} style={[styles.chipButton, styles.chipGray]}>
-              <Ionicons name="phone-portrait-sharp" size={24} color="#666666" />
-              <Text style={[styles.chipButtonText, styles.grayText]}>
-                Phone
-              </Text>
-            </TouchableOpacity>
+          </Link>
+
+          <View style={styles.groupBottom}>
+            <Text style={styles.textLeft}>Go to</Text>
+            <Link href={"/"} asChild>
+              <Text style={styles.textRight}>Login </Text>
+            </Link>
           </View>
         </View>
-
-        <View style={styles.formGroup}>
-          <TextInputWithIcon
-            label="Email Address"
-            placeholder="Enter your email"
-            iconName="email"
-            secureEntry={false}
-          />
-        </View>
-
-        <Link href="/newpassword" asChild>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Sent Code</Text>
-        </TouchableOpacity>
-        </Link>
-
-        <View style={styles.groupBottom}>
-          <Text style={styles.textLeft}>Go to</Text>
-          <Link href={"/"} asChild>
-            <Text style={styles.textRight}>Login </Text>
-          </Link>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </View>
   );
 };
@@ -123,8 +136,6 @@ const styles = StyleSheet.create({
   images: {
     marginVertical: heightPercentageToDP(1),
   },
-
-  right: {},
   forgotText: {
     fontSize: fontSizeToDp(3.3),
   },
@@ -158,7 +169,7 @@ const styles = StyleSheet.create({
   },
   buttonActions: {
     flexDirection: "row",
-    paddingTop:heightPercentageToDP(1.5),
+    paddingTop: heightPercentageToDP(1.5),
   },
   chipButton: {
     backgroundColor: THEME.COLORS.primary,
@@ -170,8 +181,8 @@ const styles = StyleSheet.create({
   },
   chipButtonText: {
     color: "#fff",
-    marginLeft:widthPercentageToDP(2),
-    fontFamily:'Mulish_400Regular'
+    marginLeft: widthPercentageToDP(2),
+    fontFamily: "Mulish_400Regular",
   },
   grayText: {
     color: THEME.COLORS.secondaryDarkTextColor,
@@ -179,17 +190,17 @@ const styles = StyleSheet.create({
   chipGray: {
     backgroundColor: THEME.COLORS.secondaryLightTextColor,
   },
-  button:{
-    backgroundColor:THEME.COLORS.primary,
-    color:'#fff',
-    paddingVertical:heightPercentageToDP(2),
-    marginTop:heightPercentageToDP(1),
-    borderRadius:12
+  button: {
+    backgroundColor: THEME.COLORS.primary,
+    color: "#fff",
+    paddingVertical: heightPercentageToDP(2),
+    marginTop: heightPercentageToDP(1),
+    borderRadius: 12,
   },
-  buttonText:{
-    color:'#fff',
-    textAlign:'center',
-    fontFamily:'Mulish_700Bold',
-    fontSize:fontSizeToDp(4.3)
-  }
+  buttonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "Mulish_700Bold",
+    fontSize: fontSizeToDp(4.3),
+  },
 });

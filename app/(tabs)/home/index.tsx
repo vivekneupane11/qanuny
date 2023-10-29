@@ -28,18 +28,16 @@ const Home = () => {
       <TabsHeader title="Mot de passe oublié" logo={true} avatar={true} />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.content}>
-          <TouchableOpacity onPress={()=>router.push('/search')}>
-          <SearchBar transparent={false} />
-
+          <TouchableOpacity onPress={() => router.push("/search")}>
+            <SearchBar transparent={false} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleLogin} >
-          <Banner />
-
+          <TouchableOpacity onPress={handleLogin}>
+            <Banner />
           </TouchableOpacity>
           <DatePicker />
           <AppointmentSection />
           <SectionHeader leftTitle="Current Document" rightTitle="See All" />
-        
+
           <DocumentSection />
           <DocumentSection />
           <DocumentSection />
@@ -63,5 +61,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: widthPercentageToDP(5),
     paddingTop: heightPercentageToDP(1),
   },
-
 });

@@ -20,11 +20,12 @@ const UserProfile = () => {
       />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <GradientView />
+          <GradientView />
           <View style={styles.content}>
-          <TouchableOpacity onPress={()=>router.push('/profile/nonprofessionalprofile')}>
-
-            <AboutUser />
+            <TouchableOpacity
+              onPress={() => router.push("/profile/nonprofessionalprofile")}
+            >
+              <AboutUser />
             </TouchableOpacity>
             <FormActions />
           </View>

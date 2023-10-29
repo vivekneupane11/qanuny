@@ -62,7 +62,7 @@ const LoginPage = () => {
 
             <Text style={styles.rememberText}>Remember</Text>
           </View>
-          <View style={styles.right}>
+          <View>
             <Link href={"/forgetpassword"} asChild>
               <Text style={styles.forgotText}>Forgot Password?</Text>
             </Link>
@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: fontSizeToDp(3.3),
   },
-  right: {},
   forgotText: {
     fontSize: fontSizeToDp(3.3),
   },

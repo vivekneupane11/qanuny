@@ -2,7 +2,14 @@ import * as Linking from "expo-linking";
 import { useRouter } from "expo-router";
 
 import { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import GoogleButton from "../components/GoogleButton";
 import CustomHeader from "../components/Header";
 import TextInputWithIcon from "../components/TextInputWithIcon";
@@ -63,18 +70,21 @@ const RegisterPage = () => {
             />
           </View>
 
-          <TouchableOpacity style={styles.button}  onPress={() => {}} >
+          <TouchableOpacity style={styles.button} onPress={() => {}}>
             <Text style={styles.buttonText}>Sign In</Text>
           </TouchableOpacity>
           <GoogleButton title="Sign In With Google" onPress={() => {}} />
 
           <View style={styles.groupBottom}>
-          <Text style={styles.textLeft}>Don't have an account?</Text>
-          <TouchableOpacity onPress={()=>router.push('/register')} >
-          <Text style={styles.textRight}>Sign up</Text>
-            <Image style={styles.underlineImage} source={require('../assets/Onboard/underline-signin.png')} />
-          </TouchableOpacity>
-        </View>
+            <Text style={styles.textLeft}>Don't have an account?</Text>
+            <TouchableOpacity onPress={() => router.push("/register")}>
+              <Text style={styles.textRight}>Sign up</Text>
+              <Image
+                style={styles.underlineImage}
+                source={require("../assets/Onboard/underline-signin.png")}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -93,7 +103,7 @@ const styles = StyleSheet.create({
   content: {
     paddingHorizontal: widthPercentageToDP(5),
     paddingTop: heightPercentageToDP(3),
-    paddingBottom:heightPercentageToDP(2)
+    paddingBottom: heightPercentageToDP(2),
   },
   formGroup: {
     paddingTop: heightPercentageToDP(2),
@@ -157,21 +167,21 @@ const styles = StyleSheet.create({
     fontSize: fontSizeToDp(3.3),
     paddingLeft: 6,
   },
-  underlineImage:{
-    marginTop:4,
-    marginLeft:10
+  underlineImage: {
+    marginTop: 4,
+    marginLeft: 10,
   },
-  button:{
-    backgroundColor:THEME.COLORS.primary,
-    color:'#fff',
-    paddingVertical:heightPercentageToDP(2),
-    marginTop:heightPercentageToDP(1),
-    borderRadius:12
+  button: {
+    backgroundColor: THEME.COLORS.primary,
+    color: "#fff",
+    paddingVertical: heightPercentageToDP(2),
+    marginTop: heightPercentageToDP(1),
+    borderRadius: 12,
   },
-  buttonText:{
-    color:'#fff',
-    textAlign:'center',
-    fontFamily:'Mulish_700Bold',
-    fontSize:fontSizeToDp(4.3)
-  }
+  buttonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "Mulish_700Bold",
+    fontSize: fontSizeToDp(4.3),
+  },
 });
